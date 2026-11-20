@@ -22,7 +22,9 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 - Filtros: **Tudo** (música, cantor ou número), **Música** ou **Cantor**.
 - Não importa maiúscula/minúscula, acento ou apóstrofo: `dont trust me` encontra
   "DON'T TRUST ME", `acdc` encontra "AC/DC".
-- Pode misturar palavras: `adele hello`.
+- Pode misturar música e cantor: `hello adele`. Se o filtro **Música** ou **Cantor** não
+  achar nada, o app procura nos dois sozinho e avisa.
+- Aceita pequenos erros de digitação: `bohemian rapsody`, `bom jovi`, `whitney huston`.
 - Toque numa música para **copiar o número**.
 
 ## Atualizar a lista
@@ -42,7 +44,7 @@ aparece como "(sem título na lista)".
 ## Desenvolvimento
 
 - Java puro, sem bibliotecas externas no app (APK de ~90 KB). `minSdk 21`, `targetSdk 35`.
-- Testes (Robolectric) cobrem a busca, a cópia do número e geram as capturas em `docs/`:
+- Testes (JUnit + Robolectric) cobrem a busca, a cópia do número e geram as capturas em `docs/`:
   `./gradlew testDebugUnitTest`
 - O APK é assinado com `app/keystore/app.keystore` (senha `android`), uma chave simples
   guardada no repositório para que versões novas instalem por cima das antigas. Para

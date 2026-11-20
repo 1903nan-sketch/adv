@@ -14,6 +14,15 @@
         <item quantity="one">%1$s resultado</item>
         <item quantity="other">%1$s resultados</item>
     </plurals>
+    <plurals name="results_widened">
+        <item quantity="one">%1$s resultado buscando em música e cantor</item>
+        <item quantity="other">%1$s resultados buscando em música e cantor</item>
+    </plurals>
+    <plurals name="results_fuzzy">
+        <item quantity="one">Nada igual · %1$s música parecida</item>
+        <item quantity="other">Nada igual · %1$s músicas parecidas</item>
+    </plurals>
+    <string name="no_results">Nenhum resultado</string>
     <string name="empty_title">Nenhuma música encontrada</string>
     <string name="empty_body">Confira a grafia ou troque o filtro acima.</string>
     <string name="no_title">(sem título na lista)</string>

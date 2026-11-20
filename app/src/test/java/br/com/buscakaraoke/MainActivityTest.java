@@ -37,11 +37,11 @@ public class MainActivityTest {
         return c.get();
     }
 
-    private static List<MainActivity.Song> results(MainActivity a) {
+    private static List<Song> results(MainActivity a) {
         ListView list = a.findViewById(R.id.list);
-        List<MainActivity.Song> out = new ArrayList<>();
+        List<Song> out = new ArrayList<>();
         for (int i = 0; i < list.getAdapter().getCount(); i++) {
-            out.add((MainActivity.Song) list.getAdapter().getItem(i));
+            out.add((Song) list.getAdapter().getItem(i));
         }
         return out;
     }
@@ -69,12 +69,14 @@ public class MainActivityTest {
         MainActivity a = start();
         mode(a, R.id.mode_song);
         type(a, "dancing queen");
-        List<MainActivity.Song> r = results(a);
+        List<Song> r = results(a);
         assertEquals("04574", r.get(0).number);
         assertEquals("ABBA", r.get(0).artist);
-        // Busca por música não deve olhar o nome do cantor.
-        type(a, "abba");
-        assertEquals(0, results(a).size());
+        // Nome da música + cantor com o filtro "Música": procura nos dois e avisa.
+        type(a, "hello adele");
+        assertEquals("24376", results(a).get(0).number);
+        assertEquals("1 resultado buscando em música e cantor",
+                ((TextView) a.findViewById(R.id.count)).getText().toString());
     }
 
     @Test
@@ -82,13 +84,13 @@ public class MainActivityTest {
         MainActivity a = start();
         mode(a, R.id.mode_artist);
         type(a, "adele");
-        List<MainActivity.Song> r = results(a);
+        List<Song> r = results(a);
         assertEquals(17, r.size());
-        for (MainActivity.Song s : r) assertTrue(s.artist, s.artist.toLowerCase().contains("adele"));
+        for (Song s : r) assertTrue(s.artist, s.artist.toLowerCase().contains("adele"));
         // Participações ("feat.") também aparecem.
         type(a, "katy perry");
         boolean feat = false;
-        for (MainActivity.Song s : results(a)) feat |= s.artist.equals("3OH!3 feat. Katy Perry");
+        for (Song s : results(a)) feat |= s.artist.equals("3OH!3 feat. Katy Perry");
         assertTrue(feat);
     }
 
@@ -126,12 +128,21 @@ public class MainActivityTest {
     }
 
     @Test
+    public void aceitaErroDeDigitacao() {
+        MainActivity a = start();
+        mode(a, R.id.mode_song);
+        type(a, "bohemian rapsody");
+        assertEquals("18024", results(a).get(0).number);
+        assertTrue(((TextView) a.findViewById(R.id.count)).getText().toString().startsWith("Nada igual"));
+    }
+
+    @Test
     public void semResultadoMostraMensagem() {
         MainActivity a = start();
         type(a, "xyzxyzxyz");
         assertEquals(0, results(a).size());
         assertEquals(View.VISIBLE, a.findViewById(R.id.empty).getVisibility());
-        assertEquals("0 resultados", ((TextView) a.findViewById(R.id.count)).getText().toString());
+        assertEquals("Nenhum resultado", ((TextView) a.findViewById(R.id.count)).getText().toString());
     }
 
     @Test
