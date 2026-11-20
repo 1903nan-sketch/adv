@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Busca Karaokê</string>
+    <string name="subtitle">%1$s músicas internacionais</string>
+    <string name="mode_all">Tudo</string>
+    <string name="mode_song">Música</string>
+    <string name="mode_artist">Cantor</string>
+    <string name="hint_all">Música, cantor ou número</string>
+    <string name="hint_song">Nome da música</string>
+    <string name="hint_artist">Nome do cantor</string>
+    <string name="clear">Limpar busca</string>
+    <string name="total">%1$s músicas · toque para copiar o número</string>
+    <plurals name="results">
+        <item quantity="one">%1$s resultado</item>
+        <item quantity="other">%1$s resultados</item>
+    </plurals>
+    <string name="empty_title">Nenhuma música encontrada</string>
+    <string name="empty_body">Confira a grafia ou troque o filtro acima.</string>
+    <string name="no_title">(sem título na lista)</string>
+    <string name="att">ATT %1$s</string>
+    <string name="copied">Número %1$s copiado</string>
+    <string name="clip_label">Número da música</string>
+</resources>

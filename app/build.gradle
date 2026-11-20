@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'br.com.buscakaraoke'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'br.com.buscakaraoke'
+        minSdk 21
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+    }
+
+    // Chave de assinatura simples (tipo "debug") guardada no repositório para que
+    // novas versões do APK possam ser instaladas por cima da anterior.
+    // Para publicar na Play Store, troque por uma chave própria e secreta.
+    signingConfigs {
+        compartilhada {
+            storeFile file('keystore/app.keystore')
+            storePassword 'android'
+            keyAlias 'buscakaraoke'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.compartilhada
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            signingConfig signingConfigs.compartilhada
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+android {
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            all {
+                systemProperty 'screenshots.dir', "${rootProject.projectDir}/docs"
+            }
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.14.1'
+}
