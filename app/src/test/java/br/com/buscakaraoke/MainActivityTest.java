@@ -75,9 +75,11 @@ public class MainActivityTest {
     @Test
     public void carregaTodasAsMusicasDoPdf() {
         MainActivity a = start();
-        assertEquals(3920, results(a).size());
-        assertEquals("3.920 músicas internacionais · versão " + BuildConfig.VERSION_NAME,
-                ((TextView) a.findViewById(R.id.subtitle)).getText().toString());
+        assertEquals(9157, results(a).size());
+        assertEquals("versão " + BuildConfig.VERSION_NAME,
+                ((TextView) a.findViewById(R.id.version)).getText().toString());
+        assertEquals("9.157 músicas · toque para copiar o número",
+                ((TextView) a.findViewById(R.id.count)).getText().toString());
     }
 
     @Test
@@ -241,7 +243,7 @@ public class MainActivityTest {
         genre(a, "Românticas");
         screenshot(a, "estilo-romanticas.png");
         genre(a, "Todos os estilos");
-        assertEquals(3920, results(a).size());
+        assertEquals(9157, results(a).size());
     }
 
     @Test
@@ -252,6 +254,47 @@ public class MainActivityTest {
         c.recreate();
         ShadowLooper.idleMainLooper();
         assertEquals(latinas, results(c.get()).size());
+    }
+
+    @Test
+    public void listaNacional() throws Exception {
+        MainActivity a = start();
+        mode(a, R.id.list_nac);
+        assertEquals(5237, results(a).size());
+        for (Song s : results(a)) assertTrue(s.national);
+        android.widget.RadioGroup g = a.findViewById(R.id.genres);
+        assertEquals("Sertanejo", ((RadioButton) g.getChildAt(1)).getText().toString());
+        type(a, "marilia mendonca");
+        assertTrue(results(a).get(0).artist.startsWith("Marília Mendonça"));
+        type(a, "bruno e marrone");
+        assertTrue(results(a).get(0).artist.matches("Bruno [&e] Marrone"));
+        screenshot(a, "busca-nacional.png");
+        type(a, "");
+        genre(a, "Sertanejo");
+        for (Song s : results(a)) assertTrue(s.national && s.hasGenre("sertanejo"));
+        screenshot(a, "lista-nacional-sertanejo.png");
+    }
+
+    @Test
+    public void internacionaisSemResultadoMostraNacionais() {
+        MainActivity a = start();
+        mode(a, R.id.list_int);
+        type(a, "marilia mendonca");
+        assertTrue(results(a).get(0).national);
+        assertTrue(((TextView) a.findViewById(R.id.count)).getText().toString()
+                .startsWith("Nada nas internacionais · "));
+    }
+
+    @Test
+    public void listaSobreviveAGirarATela() {
+        ActivityController<MainActivity> c = Robolectric.buildActivity(MainActivity.class).setup();
+        mode(c.get(), R.id.list_nac);
+        genre(c.get(), "Forró e Piseiro");
+        int n = results(c.get()).size();
+        c.recreate();
+        ShadowLooper.idleMainLooper();
+        assertEquals(n, results(c.get()).size());
+        for (Song s : results(c.get())) assertTrue(s.national && s.hasGenre("forro"));
     }
 
     @Test

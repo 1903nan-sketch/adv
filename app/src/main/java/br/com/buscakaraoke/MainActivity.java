@@ -42,11 +42,14 @@ public class MainActivity extends Activity {
     /** Estilos com menos músicas que isso não viram filtro. */
     private static final int MIN_SONGS_PER_GENRE = 5;
     private static final String STATE_GENRE = "genre";
+    private static final String STATE_LIST = "list";
 
     private final NumberFormat numberFormat = NumberFormat.getIntegerInstance(new Locale("pt", "BR"));
     private final Map<Integer, String> genreByChipId = new HashMap<>();
     /** Estilo escolhido, ou {@code null} para todos. */
     private String genre;
+    /** {@code true} só nacionais, {@code false} só internacionais, {@code null} as duas listas. */
+    private Boolean national;
 
     private SongSearch songSearch;
     private List<Song> shown = Collections.emptyList();
@@ -71,10 +74,19 @@ public class MainActivity extends Activity {
         RadioGroup modes = findViewById(R.id.modes);
 
         songSearch = new SongSearch(loadSongs());
+        ((TextView) findViewById(R.id.version)).setText(getString(R.string.version, BuildConfig.VERSION_NAME));
+
+        RadioGroup lists = findViewById(R.id.lists);
+        if (savedInstanceState != null) lists.check(savedInstanceState.getInt(STATE_LIST, R.id.list_all));
+        national = nationalFor(lists.getCheckedRadioButtonId());
         buildGenreChips(savedInstanceState == null ? null : savedInstanceState.getString(STATE_GENRE));
-        ((TextView) findViewById(R.id.subtitle))
-                .setText(getString(R.string.subtitle, numberFormat.format(songSearch.size()),
-                        BuildConfig.VERSION_NAME));
+        lists.setOnCheckedChangeListener((g, id) -> {
+            if (id == View.NO_ID) return;
+            national = nationalFor(id);
+            buildGenreChips(genre);
+            applyFilter();
+            list.setSelection(0);
+        });
 
         adapter = new SongAdapter();
         list.setAdapter(adapter);
@@ -137,15 +149,33 @@ public class MainActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(STATE_GENRE, genre);
+        outState.putInt(STATE_LIST, ((RadioGroup) findViewById(R.id.lists)).getCheckedRadioButtonId());
     }
 
+    private static Boolean nationalFor(int listChipId) {
+        if (listChipId == R.id.list_nac) return Boolean.TRUE;
+        if (listChipId == R.id.list_int) return Boolean.FALSE;
+        return null;
+    }
+
+    /**
+     * Monta os botões de estilo da lista escolhida, do estilo com mais músicas para o com
+     * menos. Mantém o estilo marcado se ele existir na lista nova.
+     */
     private void buildGenreChips(String selected) {
         RadioGroup group = findViewById(R.id.genres);
+        group.setOnCheckedChangeListener(null);
+        group.removeAllViews();
+        genreByChipId.clear();
         int checked = addGenreChip(group, getString(R.string.all_genres), null);
-        for (Map.Entry<String, String> e : Genres.LABELS.entrySet()) {
-            if (songSearch.countGenre(e.getKey()) < MIN_SONGS_PER_GENRE) continue;
-            int id = addGenreChip(group, e.getValue(), e.getKey());
-            if (e.getKey().equals(selected)) checked = id;
+        List<String> keys = new ArrayList<>(Genres.LABELS.keySet());
+        Map<String, Integer> counts = new HashMap<>();
+        for (String k : keys) counts.put(k, songSearch.countGenre(k, national));
+        Collections.sort(keys, (a, b) -> Integer.compare(counts.get(b), counts.get(a)));
+        for (String k : keys) {
+            if (counts.get(k) < MIN_SONGS_PER_GENRE) continue;
+            int id = addGenreChip(group, Genres.LABELS.get(k), k);
+            if (k.equals(selected)) checked = id;
         }
         group.check(checked);
         genre = genreByChipId.get(checked);
@@ -174,6 +204,11 @@ public class MainActivity extends Activity {
         return id;
     }
 
+    @SuppressWarnings("deprecation")
+    private int color(int id) {
+        return Build.VERSION.SDK_INT >= 23 ? getColor(id) : getResources().getColor(id);
+    }
+
     private int dp(int value) {
         return Math.round(value * getResources().getDisplayMetrics().density);
     }
@@ -200,23 +235,30 @@ public class MainActivity extends Activity {
 
     private List<Song> loadSongs() {
         List<Song> songs = new ArrayList<>();
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(
-                getAssets().open("musicas.tsv"), StandardCharsets.UTF_8))) {
+        try {
             Genres genres = Genres.load(getAssets().open("estilos.txt"));
-            String line;
-            while ((line = in.readLine()) != null) {
-                String[] f = line.split("\t", -1);
-                if (f.length < 4) continue;
-                songs.add(new Song(f[0], f[1], f[2], f[3], genres.forArtist(f[1])));
-            }
+            readList("internacional.tsv", false, genres, songs);
+            readList("nacional.tsv", true, genres, songs);
         } catch (IOException e) {
             throw new IllegalStateException("Não foi possível ler a lista de músicas", e);
         }
         return songs;
     }
 
+    private void readList(String file, boolean isNational, Genres genres, List<Song> out) throws IOException {
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(
+                getAssets().open(file), StandardCharsets.UTF_8))) {
+            String line;
+            while ((line = in.readLine()) != null) {
+                String[] f = line.split("\t", -1);
+                if (f.length < 4) continue;
+                out.add(new Song(f[0], f[1], f[2], f[3], genres.forArtist(f[1]), isNational));
+            }
+        }
+    }
+
     private void applyFilter() {
-        SongSearch.Result r = songSearch.search(search.getText().toString(), field, genre);
+        SongSearch.Result r = songSearch.search(search.getText().toString(), field, genre, national);
         shown = r.songs;
         int n = shown.size();
         String num = numberFormat.format(n);
@@ -228,6 +270,9 @@ public class MainActivity extends Activity {
         } else if (r.kind == SongSearch.Kind.OTHER_GENRE) {
             count.setText(getResources().getQuantityString(R.plurals.results_other_genre, n, num,
                     Genres.LABELS.get(genre)));
+        } else if (r.kind == SongSearch.Kind.OTHER_LIST) {
+            count.setText(getResources().getQuantityString(
+                    Boolean.TRUE.equals(national) ? R.plurals.results_in_int : R.plurals.results_in_nac, n, num));
         } else if (r.kind == SongSearch.Kind.WIDENED) {
             count.setText(getResources().getQuantityString(R.plurals.results_widened, n, num));
         } else if (r.kind == SongSearch.Kind.FUZZY) {
@@ -328,6 +373,7 @@ public class MainActivity extends Activity {
                 convertView = inflater.inflate(R.layout.item_song, parent, false);
                 h = new Holder();
                 h.code = convertView.findViewById(R.id.code);
+                h.box = convertView.findViewById(R.id.code_box);
                 h.att = convertView.findViewById(R.id.att);
                 h.title = convertView.findViewById(R.id.title);
                 h.artist = convertView.findViewById(R.id.artist);
@@ -337,7 +383,11 @@ public class MainActivity extends Activity {
             }
             Song s = shown.get(position);
             h.code.setText(s.number);
-            h.att.setText(getString(R.string.att, s.att));
+            h.att.setText(getString(R.string.att, getString(s.national ? R.string.tag_nac : R.string.tag_int), s.att));
+            int ink = color(s.national ? R.color.code_text_nac : R.color.code_text);
+            h.code.setTextColor(ink);
+            h.att.setTextColor(ink);
+            h.box.setBackgroundResource(s.national ? R.drawable.code_bg_nac : R.drawable.code_bg);
             h.title.setText(s.title.isEmpty() ? getString(R.string.no_title) : s.title);
             h.artist.setText(s.artist);
             return convertView;
@@ -345,6 +395,7 @@ public class MainActivity extends Activity {
     }
 
     private static final class Holder {
+        View box;
         TextView code;
         TextView att;
         TextView title;

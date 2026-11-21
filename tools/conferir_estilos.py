@@ -35,39 +35,51 @@ def load_styles():
         if not line or line.startswith('#'):
             continue
         name, _, genres = line.partition('|')
-        styles[key(name)] = [g.strip() for g in genres.split(',') if g.strip()]
+        g = [x.strip() for x in genres.split(',') if x.strip()]
+        k = key(name)
+        if k in styles and styles[k] != g:
+            print(f'AVISO: "{name.strip()}" aparece com estilos diferentes: {styles[k]} e {g}')
+        styles[k] = g
     return styles
 
 
 def styles_for(artist, styles):
+    """Estilos do cantor. Em colaborações ("X e Y & Z, W") procura o trecho mais longo
+    que seja um cantor conhecido, começando pelo primeiro nome: assim "Bruno e Marrone &
+    Chitãozinho e Xororó" acha a dupla "Bruno e Marrone", e não "Bruno"."""
     base = FEAT.sub('', artist).strip() or artist
     no_parens = PARENS.sub('', base).strip() or base
     for cand in (base, no_parens):
         if key(cand) in styles:
             return styles[key(cand)]
-    for part in SPLIT.split(no_parens):
-        if part.strip() and key(part) in styles:
-            return styles[key(part)]
+    keys = [key(p) for p in SPLIT.split(no_parens) if p.strip()]
+    for i in range(len(keys)):
+        for j in range(len(keys) - 1, i - 1, -1):
+            k = ''.join(keys[i:j + 1])
+            if k in styles:
+                return styles[k]
     return None
 
 
 def main():
     styles = load_styles()
-    counts = collections.Counter()
-    missing = collections.Counter()
-    for line in open(ASSETS + 'musicas.tsv', encoding='utf-8'):
-        artist = line.split('\t')[1]
-        g = styles_for(artist, styles)
-        if g is None:
-            missing[artist] += 1
-        else:
-            for x in g:
-                counts[x] += 1
-    for g, n in counts.most_common():
-        print(f'{n:5d}  {g}')
-    for a, n in missing.most_common():
-        print('SEM ESTILO:', a, f'({n})')
-    return 1 if missing else 0
+    status = 0
+    for lista in ('internacional', 'nacional'):
+        counts = collections.Counter()
+        missing = collections.Counter()
+        for line in open(ASSETS + lista + '.tsv', encoding='utf-8'):
+            artist = line.split('\t')[1]
+            g = styles_for(artist, styles)
+            if g is None:
+                missing[artist] += 1
+            else:
+                for x in g:
+                    counts[x] += 1
+        print(f'== {lista}: ' + ', '.join(f'{g} {n}' for g, n in counts.most_common()))
+        for a, n in missing.most_common():
+            print('SEM ESTILO:', a, f'({n})')
+            status = 1
+    return status
 
 
 if __name__ == '__main__':

@@ -29,6 +29,8 @@ final class SongSearch {
         WIDENED,
         /** Não achou no estilo escolhido, mas achou em outros estilos. */
         OTHER_GENRE,
+        /** Não achou na lista escolhida (nacional/internacional), mas achou na outra. */
+        OTHER_LIST,
         /** Só achou aceitando erros de digitação (pode estar vazio). */
         FUZZY
     }
@@ -56,7 +58,10 @@ final class SongSearch {
     private int[] row2 = new int[32];
 
     SongSearch(List<Song> songsInListOrder) {
-        byArtist = Collections.unmodifiableList(new ArrayList<>(songsInListOrder));
+        // Junta as listas em ordem alfabética de cantor (a ordem de cada cantor é mantida).
+        List<Song> byName = new ArrayList<>(songsInListOrder);
+        Collections.sort(byName, (x, y) -> x.normArtist.compareTo(y.normArtist));
+        byArtist = Collections.unmodifiableList(byName);
         List<Song> t = new ArrayList<>(songsInListOrder);
         // Ordena pelo nome da música; as sem título vão para o fim.
         Collections.sort(t, (a, b) -> {
@@ -72,55 +77,77 @@ final class SongSearch {
     }
 
     Result search(String rawQuery, Field field) {
-        return search(rawQuery, field, null);
+        return search(rawQuery, field, null, null);
     }
 
-    /** Músicas de um estilo, na ordem da lista. */
-    int countGenre(String genre) {
+    Result search(String rawQuery, Field field, String genre) {
+        return search(rawQuery, field, genre, null);
+    }
+
+    /** Músicas de um estilo dentro de uma lista ({@code national} nulo = as duas). */
+    int countGenre(String genre, Boolean national) {
         int n = 0;
         for (Song s : byArtist) {
-            if (s.hasGenre(genre)) n++;
+            if (s.hasGenre(genre) && (national == null || s.national == national)) n++;
         }
         return n;
     }
 
-    /** @param genre chave do estilo ("rock"...) ou {@code null} para todos. */
-    Result search(String rawQuery, Field field, String genre) {
-        List<Song> all = field == Field.TITLE ? byTitle : byArtist;
-        List<Song> inGenre = all;
-        if (genre != null) {
-            inGenre = new ArrayList<>();
-            for (Song s : all) {
-                if (s.hasGenre(genre)) inGenre.add(s);
-            }
+    int countGenre(String genre) {
+        return countGenre(genre, null);
+    }
+
+    private static List<Song> filter(List<Song> songs, String genre, Boolean national) {
+        if (genre == null && national == null) return songs;
+        List<Song> out = new ArrayList<>();
+        for (Song s : songs) {
+            if ((genre == null || s.hasGenre(genre)) && (national == null || s.national == national)) out.add(s);
         }
+        return out;
+    }
+
+    /**
+     * @param genre    chave do estilo ("rock"...) ou {@code null} para todos.
+     * @param national {@code true} só nacionais, {@code false} só internacionais, {@code null} as duas.
+     */
+    Result search(String rawQuery, Field field, String genre, Boolean national) {
+        List<Song> all = field == Field.TITLE ? byTitle : byArtist;
         String q = Song.normalize(rawQuery);
-        if (q.isEmpty()) return new Result(Kind.LIST, inGenre);
+        if (q.isEmpty()) return new Result(Kind.LIST, filter(all, genre, national));
 
         String[] tokens = requiredTokens(q);
         String compact = q.replace(" ", "");
 
-        // 1) Texto exato: no estilo escolhido e, se não achar, em todos os estilos.
-        List<Song> r = exact(q, tokens, compact, field, inGenre);
-        if (!r.isEmpty()) return new Result(Kind.EXACT, r);
-        if (field != Field.ALL) {
-            r = exact(q, tokens, compact, Field.ALL, inGenre);
-            if (!r.isEmpty()) return new Result(Kind.WIDENED, r);
-        }
+        // Onde procurar, em ordem: com os filtros escolhidos; sem o estilo; sem a lista.
+        List<List<Song>> scopes = new ArrayList<>();
+        List<Kind> kinds = new ArrayList<>();
+        scopes.add(filter(all, genre, national));
+        kinds.add(Kind.EXACT);
         if (genre != null) {
-            r = exact(q, tokens, compact, field, all);
-            if (r.isEmpty() && field != Field.ALL) r = exact(q, tokens, compact, Field.ALL, all);
-            if (!r.isEmpty()) return new Result(Kind.OTHER_GENRE, r);
+            scopes.add(filter(all, null, national));
+            kinds.add(Kind.OTHER_GENRE);
+        }
+        if (national != null) {
+            scopes.add(all);
+            kinds.add(Kind.OTHER_LIST);
         }
 
-        // 2) Com erros de digitação ou escrito "pelo som".
-        r = fuzzy(tokens, field, inGenre);
-        if (r.isEmpty() && field != Field.ALL) r = fuzzy(tokens, Field.ALL, inGenre);
-        if (r.isEmpty() && genre != null) {
-            r = fuzzy(tokens, field, all);
-            if (r.isEmpty() && field != Field.ALL) r = fuzzy(tokens, Field.ALL, all);
+        // 1) Texto exato (no campo escolhido e, se não achar, em música e cantor).
+        for (int i = 0; i < scopes.size(); i++) {
+            List<Song> r = exact(q, tokens, compact, field, scopes.get(i));
+            if (!r.isEmpty()) return new Result(kinds.get(i), r);
+            if (field != Field.ALL) {
+                r = exact(q, tokens, compact, Field.ALL, scopes.get(i));
+                if (!r.isEmpty()) return new Result(i == 0 ? Kind.WIDENED : kinds.get(i), r);
+            }
         }
-        return new Result(Kind.FUZZY, r);
+        // 2) Com erros de digitação ou escrito "pelo som".
+        for (List<Song> scope : scopes) {
+            List<Song> r = fuzzy(tokens, field, scope);
+            if (r.isEmpty() && field != Field.ALL) r = fuzzy(tokens, Field.ALL, scope);
+            if (!r.isEmpty()) return new Result(Kind.FUZZY, r);
+        }
+        return new Result(Kind.FUZZY, Collections.emptyList());
     }
 
     /** Tira as palavras opcionais, a não ser que a busca só tenha elas. */

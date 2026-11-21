@@ -15,4 +15,6 @@
     <color name="search_bg">#FFFFFF</color>
     <color name="search_icon">#56636D</color>
     <color name="navbar">#000000</color>
+    <color name="code_bg_nac">#DDF2E3</color>
+    <color name="code_text_nac">#14532D</color>
 </resources>

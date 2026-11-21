@@ -30,6 +30,8 @@ final class Song {
     final String[] titleSounds;
     final String[] artistSounds;
     final String[] allSounds;
+    /** {@code true} para a lista nacional, {@code false} para a internacional. */
+    final boolean national;
     /** Chaves de estilo (ex.: "pop", "rock"); pode ser vazio. */
     final String[] genres;
 
@@ -38,6 +40,11 @@ final class Song {
     }
 
     Song(String number, String artist, String title, String att, String[] genres) {
+        this(number, artist, title, att, genres, false);
+    }
+
+    Song(String number, String artist, String title, String att, String[] genres, boolean national) {
+        this.national = national;
         this.genres = genres;
         this.number = number;
         this.artist = artist;

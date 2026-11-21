@@ -1,12 +1,14 @@
 # Busca Karaokê
 
-App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ) pelo
-**nome da música** ou pelo **nome do cantor** e ver o número para digitar no aparelho.
+App Android para procurar músicas das listas de karaokê HD-OKÊ (**Nacional** e
+**Internacional**, 9.157 músicas) pelo **nome da música** ou pelo **nome do cantor** e ver
+o número para digitar no aparelho.
 
 <p>
   <img src="docs/tela-inicial.png" width="240" alt="Tela inicial">
   <img src="docs/busca-cantor.png" width="240" alt="Busca por cantor">
-  <img src="docs/busca-sem-acento.png" width="240" alt="Busca sem acento">
+  <img src="docs/busca-nacional.png" width="240" alt="Busca na lista nacional">
+  <img src="docs/lista-nacional-sertanejo.png" width="240" alt="Sertanejo">
   <img src="docs/estilo-romanticas.png" width="240" alt="Filtro por estilo">
   <img src="docs/modo-escuro.png" width="240" alt="Modo escuro">
 </p>
@@ -20,6 +22,9 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 
 ## Como usar
 
+- No topo, escolha a lista: **Todas**, **Nacionais** ou **Internacionais**. Músicas
+  nacionais têm a caixa do número verde e a marca "NAC"; internacionais, "INT". Se a
+  busca não achar nada na lista escolhida, o app mostra o que achou na outra e avisa.
 - Digite na caixa de busca. Os resultados aparecem enquanto você digita.
 - Filtros: **Tudo** (música, cantor ou número), **Música** ou **Cantor**.
 - Não precisa de acento: `beyonce` acha "Beyoncé", `cancao do mar` acha "CANÇÃO DO MAR".
@@ -31,8 +36,10 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 - Aceita pequenos erros de digitação: `bohemian rapsody`, `bom jovi`, `whitney huston`.
 - Aceita nomes escritos "pelo som": `xakira`, `uitney huston`, `ed xiran`, `bionce`.
 - Filtre por **estilo musical** na segunda fileira de botões (role para o lado):
-  Pop, Rock, Românticas, R&B e Soul, Dance, Rap e Hip-Hop, Latinas, Country,
-  Jazz e Blues, Filmes e Musicais, Reggae, Italianas e Europeias, K-pop.
+  Sertanejo, Pop, Rock, MPB, Românticas, Samba e Pagode, Forró e Piseiro, Gospel, Axé,
+  Brega e Arrocha, Funk, R&B e Soul, Dance, Rap e Hip-Hop, Latinas, Country, Reggae,
+  Jazz e Blues, Filmes e Musicais, Infantil, Italianas e Europeias, K-pop. Os estilos
+  aparecem do mais comum para o menos comum na lista escolhida.
   O estilo funciona junto com a busca (ex.: estilo Românticas + `love`). Se a música
   não for do estilo marcado, ela aparece mesmo assim, com o aviso "Nada em …".
 - A versão instalada aparece no topo da tela.
@@ -40,20 +47,30 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 
 ## Atualizar a lista
 
-A lista fica em `app/src/main/assets/musicas.tsv` (3.920 músicas extraídas do PDF).
+As listas ficam em `app/src/main/assets/`:
+
+| Arquivo | Origem | Músicas |
+|---|---|---|
+| `internacional.tsv` | LISTA_COMPLETA_INTERNACIONAL.pdf (66 páginas) | 3.920 |
+| `nacional.tsv` | LISTA_COMPLETA_NACIONAL.pdf (88 páginas) | 5.237 |
+
 Para gerar de novo a partir de um PDF novo:
 
 ```bash
-pdftotext -layout LISTA_COMPLETA_INTERNACIONAL.pdf lista.txt
-python3 tools/pdf_para_tsv.py lista.txt app/src/main/assets/musicas.tsv
-./gradlew assembleRelease   # APK em app/build/outputs/apk/release/
+pdftotext -layout LISTA_COMPLETA_NACIONAL.pdf nacional.txt
+python3 tools/pdf_para_tsv.py nacional.txt app/src/main/assets/nacional.tsv
+python3 tools/conferir_estilos.py   # todo cantor novo precisa de estilo
+./gradlew assembleRelease           # APK em app/build/outputs/apk/release/
 ```
+
+Confira se o total bate com o PDF (páginas cheias têm 60 músicas).
 
 ### Estilos musicais
 
 O PDF não traz o estilo das músicas. Ele foi definido **por cantor** no arquivo
 `app/src/main/assets/estilos.txt` (uma linha por cantor: `Cantor | estilo,estilo`).
-Colaborações ("X ft. Y", "X & Y") usam o estilo do primeiro cantor. Estilos com menos
+Colaborações ("X ft. Y", "X & Y", "X e Y") usam o estilo do primeiro cantor (ou da
+primeira dupla: "Bruno e Marrone & Chitãozinho e Xororó" usa o de "Bruno e Marrone"). Estilos com menos
 de 5 músicas não aparecem como filtro. Depois de mudar a lista ou os estilos, confira se
 nenhum cantor ficou sem estilo:
 

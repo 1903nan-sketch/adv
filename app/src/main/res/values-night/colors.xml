@@ -14,4 +14,6 @@
     <color name="on_header_muted">#98C6D6</color>
     <color name="search_bg">#1C272C</color>
     <color name="search_icon">#9AA8B1</color>
+    <color name="code_bg_nac">#173D26</color>
+    <color name="code_text_nac">#BFEFCF</color>
 </resources>

@@ -23,16 +23,20 @@ public class SongSearchTest {
     public static void load() throws IOException {
         Genres genres = Genres.load(Files.newInputStream(Paths.get("src/main/assets/estilos.txt")));
         List<Song> songs = new ArrayList<>();
-        for (String line : Files.readAllLines(Paths.get("src/main/assets/musicas.tsv"), StandardCharsets.UTF_8)) {
-            String[] f = line.split("\t", -1);
-            songs.add(new Song(f[0], f[1], f[2], f[3], genres.forArtist(f[1])));
+        for (String list : new String[] {"internacional", "nacional"}) {
+            boolean isNational = list.equals("nacional");
+            for (String line : Files.readAllLines(Paths.get("src/main/assets/" + list + ".tsv"), StandardCharsets.UTF_8)) {
+                String[] f = line.split("\t", -1);
+                songs.add(new Song(f[0], f[1], f[2], f[3], genres.forArtist(f[1]), isNational));
+            }
         }
         all = songs;
         search = new SongSearch(songs);
     }
 
+    /** Os testes mais antigos são sobre a lista internacional. */
     private static SongSearch.Result find(String q, SongSearch.Field f) {
-        return search.search(q, f);
+        return search.search(q, f, null, false);
     }
 
     private static void assertFirst(String q, SongSearch.Field f, String number) {
@@ -56,6 +60,8 @@ public class SongSearchTest {
     @Test
     public void buscaVaziaMostraTudo() {
         assertEquals(3920, find("", SongSearch.Field.ALL).songs.size());
+        assertEquals(9157, search.search("", SongSearch.Field.ALL).songs.size());
+        assertEquals(5237, search.search("", SongSearch.Field.ALL, null, true).songs.size());
         assertEquals(SongSearch.Kind.LIST, find("  ", SongSearch.Field.TITLE).kind);
     }
 
@@ -85,7 +91,7 @@ public class SongSearchTest {
         // A lista escreve de 3 jeitos ("Guns N' Roses", "Guns 'N Roses"...): todos aparecem.
         assertEquals(13, find("guns n roses", SongSearch.Field.ARTIST).songs.size());
         assertEquals(13, find("guns and roses", SongSearch.Field.ARTIST).songs.size());
-        assertArtistFound("simon e garfunkel", "Simon & Garfunkel");
+        assertArtistAmong("simon e garfunkel", "Simon & Garfunkel", "Simon and Garfunkel");
         assertEquals(17, find("adele", SongSearch.Field.ARTIST).songs.size());
     }
 
@@ -207,7 +213,7 @@ public class SongSearchTest {
     }
 
     private static SongSearch.Result find(String q, SongSearch.Field f, String genre) {
-        return search.search(q, f, genre);
+        return search.search(q, f, genre, false);
     }
 
     @Test
@@ -221,6 +227,67 @@ public class SongSearchTest {
         assertArtistFound("rolim stones", "Rolling Stones (The)");
         assertArtistFound("aerosmit", "Aerosmith");
         assertFirst("tanderstruck", SongSearch.Field.TITLE, "18592");
+    }
+
+    // ------------------------------------------------------------ nacionais
+
+    private static Song firstNational(String q, SongSearch.Field f) {
+        SongSearch.Result r = search.search(q, f, null, null);
+        assertTrue("sem resultado para \"" + q + "\"", !r.songs.isEmpty());
+        return r.songs.get(0);
+    }
+
+    @Test
+    public void buscaNacional() {
+        assertEquals("Chitãozinho & Xororó", firstNational("evidencias", SongSearch.Field.TITLE).artist);
+        assertEquals("03267", firstNational("tempo perdido", SongSearch.Field.TITLE).number);
+        assertEquals("06367", firstNational("deixa a vida me levar", SongSearch.Field.ALL).number);
+        assertEquals("33693", firstNational("infiel marilia", SongSearch.Field.ALL).number);
+        assertTrue(firstNational("marilia mendonca", SongSearch.Field.ARTIST).artist.startsWith("Marília Mendonça"));
+        assertTrue(firstNational("bruno e marrone", SongSearch.Field.ARTIST).artist.matches("Bruno [&e] Marrone"));
+        assertTrue(firstNational("bruno marrone", SongSearch.Field.ARTIST).artist.matches("Bruno [&e] Marrone"));
+        assertTrue(firstNational("zeze di camargo", SongSearch.Field.ARTIST).artist.startsWith("Zezé"));
+        assertTrue(firstNational("chitaozinho e xororo", SongSearch.Field.ARTIST).artist.startsWith("Chitãozinho"));
+        assertTrue(firstNational("legiao urbana", SongSearch.Field.ARTIST).national);
+    }
+
+    @Test
+    public void listaInternacionalSemResultadoMostraANacional() {
+        SongSearch.Result r = search.search("marilia mendonca", SongSearch.Field.ALL, null, false);
+        assertEquals(SongSearch.Kind.OTHER_LIST, r.kind);
+        for (Song x : r.songs) assertTrue(x.artist, x.national);
+        r = search.search("adele", SongSearch.Field.ALL, null, true);
+        assertEquals(SongSearch.Kind.OTHER_LIST, r.kind);
+        assertEquals("Adele", r.songs.get(0).artist);
+    }
+
+    @Test
+    public void estilosNacionais() {
+        assertGenre("Bruno & Marrone", "sertanejo");
+        assertGenre("Bruno e Marrone & Chitãozinho e Xororó", "sertanejo");
+        assertGenre("Edson e Hudson e Bruno e Marrone", "sertanejo");
+        assertGenre("Simone & Simaria, Zé Felipe", "sertanejo");   // não é a Simone da MPB
+        assertGenre("Simone", "mpb");
+        assertGenre("Henrique & Juliano & João Neto", "sertanejo");
+        assertGenre("Hugo e Guilherme, Marília Mendoça", "sertanejo");
+        assertGenre("Zeca Pagodinho", "samba");
+        assertGenre("Ivete Sangalo", "axe");
+        assertGenre("Legião Urbana", "rock");
+        assertGenre("Wesley Safadão", "forro");
+        assertGenre("Aline Barros", "gospel");
+        assertGenre("Xuxa", "infantil");
+        assertGenre("Reginaldo Rossi", "brega");
+        assertGenre("Dan + Shay, Justin Bieber", "country");
+        List<Song> sertanejo = search.search("", SongSearch.Field.ALL, "sertanejo", true).songs;
+        assertTrue(sertanejo.size() > 1500);
+        for (Song x : sertanejo) assertTrue(x.national && x.hasGenre("sertanejo"));
+    }
+
+    @Test
+    public void numerosNaoSeRepetemEntreAsListas() {
+        java.util.Set<String> seen = new java.util.HashSet<>();
+        for (Song x : all) assertTrue("número repetido: " + x.number, seen.add(x.number));
+        assertEquals(9157, seen.size());
     }
 
     @Test

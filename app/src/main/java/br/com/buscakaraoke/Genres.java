@@ -24,20 +24,27 @@ final class Genres {
     static {
         LABELS.put("pop", "Pop");
         LABELS.put("rock", "Rock");
+        LABELS.put("sertanejo", "Sertanejo");
         LABELS.put("romantica", "Românticas");
+        LABELS.put("mpb", "MPB");
+        LABELS.put("samba", "Samba e Pagode");
+        LABELS.put("forro", "Forró e Piseiro");
         LABELS.put("soul", "R&B e Soul");
+        LABELS.put("gospel", "Gospel");
+        LABELS.put("axe", "Axé");
         LABELS.put("dance", "Dance");
+        LABELS.put("brega", "Brega e Arrocha");
+        LABELS.put("funk", "Funk");
         LABELS.put("rap", "Rap e Hip-Hop");
         LABELS.put("latina", "Latinas");
         LABELS.put("country", "Country");
+        LABELS.put("reggae", "Reggae");
         LABELS.put("jazz", "Jazz e Blues");
         LABELS.put("filmes", "Filmes e Musicais");
-        LABELS.put("reggae", "Reggae");
+        LABELS.put("infantil", "Infantil");
         LABELS.put("europeia", "Italianas e Europeias");
         LABELS.put("kpop", "K-pop");
-        LABELS.put("sertanejo", "Sertanejo");
-        LABELS.put("mpb", "MPB");
-        LABELS.put("gospel", "Gospel");
+        LABELS.put("outros", "Outros");
     }
 
     private static final Pattern FEAT = Pattern.compile(
@@ -69,7 +76,11 @@ final class Genres {
         return g;
     }
 
-    /** Estilos do cantor; colaborações usam o primeiro cantor reconhecido. */
+    /**
+     * Estilos do cantor. Em colaborações ("X e Y & Z, W") procura o trecho mais longo que
+     * seja um cantor conhecido, começando pelo primeiro nome: assim "Bruno e Marrone &
+     * Chitãozinho e Xororó" acha a dupla "Bruno e Marrone", e não só "Bruno".
+     */
     String[] forArtist(String artist) {
         String base = FEAT.matcher(artist).replaceFirst("").trim();
         if (base.isEmpty()) base = artist;
@@ -78,10 +89,17 @@ final class Genres {
         String[] g = byKey.get(key(base));
         if (g == null) g = byKey.get(key(noParens));
         if (g != null) return g;
+        List<String> keys = new ArrayList<>();
         for (String part : SPLIT.split(noParens)) {
-            if (part.trim().isEmpty()) continue;
-            g = byKey.get(key(part));
-            if (g != null) return g;
+            if (!part.trim().isEmpty()) keys.add(key(part));
+        }
+        for (int i = 0; i < keys.size(); i++) {
+            for (int j = keys.size() - 1; j >= i; j--) {
+                StringBuilder k = new StringBuilder();
+                for (int x = i; x <= j; x++) k.append(keys.get(x));
+                g = byKey.get(k.toString());
+                if (g != null) return g;
+            }
         }
         return NONE;
     }

@@ -3,7 +3,7 @@
 # Colaborações ("X ft. Y", "X & Y", "X, Y") usam o estilo do primeiro cantor.
 # Maiúsculas, acentos, "The" e "&"/"and"/"e" não importam na comparação.
 # Estilos: pop rock romantica dance rap soul latina country reggae jazz europeia
-#          kpop filmes gospel sertanejo mpb
+#          kpop filmes gospel sertanejo mpb samba forro funk axe brega infantil outros
 10cc | rock
 10,000 Maniacs | rock
 24KGoldn | rap,pop
@@ -1278,3 +1278,1064 @@ Zaz | europeia
 Zedd | dance
 Ziggy Marley | reggae
 ZZ Top | rock
+
+# ---------------------------------------------------------------- Nacionais
+14 Bis | rock,mpb
+1Kilo | rap
+4 Taste | pop
+5 a Seco | mpb
+509E | rap
+A Banda Mais Bonita da Cidade | mpb
+A Cor do Som | mpb
+A Turma do Balão Mágico | infantil
+Absyntho | rock
+Acácio O Ferinha da Bahia | brega
+Adair Cardoso | sertanejo
+Adalberto e Adriano | sertanejo
+Adilson Ramos | brega
+Adoniran Barbosa | samba
+Adoração e Adoradores | gospel
+Adriana | pop
+Adriana Calcanhotto | mpb
+Adriana Calcanhoto | mpb
+Adriana Ribeiro | axe
+Adryana e a Rapaziada | axe
+Adryana Ribeiro | axe
+Adson e Alana | sertanejo
+Agepê | samba
+Agnaldo Rayol | romantica
+Agnaldo Timóteo | romantica
+Agostinho dos Santos | romantica
+Agridoce | pop
+Akundum | axe
+Aladdin | filmes
+Alan & Aladin | sertanejo
+Alanzim Coreano | forro
+Alberto Moreno | brega
+Alceu Valença | mpb,forro
+Alcione | samba
+Alda Célia | gospel
+Aldair Playboy | forro
+Alexandre Pires | samba,romantica
+Aline Barros | gospel
+Aline Calixto | samba
+Almir Guineto | samba
+Almir Rogerio | sertanejo
+Almir Sater | sertanejo
+Alok | dance
+Altay Veloso | mpb
+Altemar Dutra | romantica
+Amado Batista | brega
+Amelinha | mpb
+Amilcka e Chocolate | axe
+Ana Cañas | mpb
+Ana Carolina | mpb
+Ana Castela | sertanejo
+Ana Nóbrega | gospel
+Ana Vilela | mpb
+Ananda | pop
+Anavitória | mpb,pop
+Anderson Freire | gospel
+André e Adriano | sertanejo
+André Leono | gospel
+André Valadão | gospel
+Angela Maria | romantica
+Angela Ro Ro | mpb
+Angélica | infantil,pop
+Angra | rock
+Anisio Silva | romantica
+Anitta | pop,funk
+Anjos de Resgate | gospel
+Antonio Carlos e Renato | sertanejo
+Antonio Marcos | romantica
+Antony e Gabriel | sertanejo
+Ao Cubo | rap,gospel
+Ara Ketu | axe
+Aretuza Lovi | pop
+Arianne | gospel
+Arlindo Cruz | samba
+Armandinho | reggae
+Arriba Saia | forro
+Art Popular | samba
+As Aventuras de Poliana | infantil
+As Empreguetes | pop
+As Frenéticas | pop
+As Meninas | axe
+Asa de Águia | axe
+Ataide e Alexandre | sertanejo
+Ataulfo Alves | samba
+Atitude 67 | samba
+Ávine e Matheus Fernandes | forro
+Avine Vinny | forro
+Aviões | forro
+Aviões do Forró | forro
+Axé Blond | axe
+Azymuth | mpb
+Babado Novo | axe
+Baby Consuelo | mpb
+Baco Exu do Blues | rap
+Baitaca | sertanejo
+Bala, Bombom e Chocolate | brega
+Banda A Favorita | brega
+Banda Beijo | axe
+Banda Brasil | forro
+Banda Calypso | brega
+Banda Djavu | brega
+Banda do Mar | rock
+Banda Eva | axe
+Banda Kaçamba | sertanejo
+Banda Luxúria | forro
+Banda Magníficos | forro
+Banda Malta | rock
+Banda Mel | axe
+Banda Musa do Calypso | brega
+Banda Sayonara | brega
+Banda Uó | pop
+Banda Vingadora | brega
+Barão Vermelho | rock
+Barões da Pisadinha | forro
+Barões do Forró | forro
+Barreirinho | sertanejo
+Barrerito | sertanejo
+Bartô Galeno | brega
+Bebel Gilberto | mpb
+Bebeto | samba
+Belchior | mpb
+Belmont e Amaraí | sertanejo
+Belo | samba
+Benito Di Paula | samba
+Beth Carvalho | samba
+Beto Barbosa | forro
+Beto Guedes | mpb
+Beto Guilherme | sertanejo
+Bezerra da Silva | samba
+Bicho de Pé | forro
+Biel | pop
+BIN | rap
+Biquini Cavadão | rock
+Biro do Cavaco | samba
+Biu do Piseiro | forro
+Blitz | rock
+Boka Loka | samba
+Bom Balanço | axe
+Bonde das Maravilhas | funk
+Bonde do Forró | forro
+Bonde do Maluco | axe
+Bonde do Tigrão | funk
+Bonde dos Catchorros | funk
+Bonde Sertanejo | sertanejo
+Boyzinho o Rei da Bregadeira | brega
+Braga Boys | axe
+Brenno e Matheus | sertanejo
+Brisa Star | brega
+Br'oz | pop
+Bruna Karla | gospel
+Bruna Viola | sertanejo
+Bruninho e Davi | sertanejo
+Bruno & Marrone | sertanejo
+Bruno e Baretto | sertanejo
+Bruno e Barretto | sertanejo
+Bruno Martini | dance
+Byafra | romantica
+Cácio e Marcos | sertanejo
+Caetano Veloso | mpb
+Calcinha Preta | forro
+Camila e Haniel | sertanejo
+Camisa de Vênus | rock
+Canção e Louvor | gospel
+Cansei de Ser Sexy | pop
+Capital Inicial | rock
+Carinha de Anjo | infantil
+Carlinhos Brown | axe,mpb
+Carlos Alexandre | brega
+Carlos Cezar e Cristiano | sertanejo
+Carlos Dafé | samba
+Carlos e Jader | sertanejo
+Carlos Gonzaga | romantica
+Carmem Miranda | samba
+Carmen Miranda | samba
+Carmen Silva | gospel
+Carrapicho | axe
+Carreiro e Capataz | sertanejo
+Cartola | samba
+Casa Worship | gospel
+Cascatinha e Inhana | sertanejo
+Cássia Eller | mpb,rock
+Cassiane | gospel
+Cassiano | mpb
+Catedral | rock,gospel
+Cauby Peixoto | romantica
+Cavaleiros do Forró | forro
+Cavaleiros do Zodíaco | infantil
+Cazuza | rock
+Célia Cruz | latina
+Celly Campello | pop
+César e Paulinho | sertanejo
+Cezar e Paulinho | sertanejo
+César Menotti e Fabiano | sertanejo
+Charlie Brown Jr. | rock
+Chefin | rap
+Cheiro de Amor | axe
+Chiclete com Banana | axe
+Chico Buarque | mpb
+Chico César | mpb
+Chico Rey e Paraná | sertanejo
+Chimarruts | reggae
+Chiquititas | infantil
+Chitãozinho & Xororó | sertanejo
+Christian e Cristiano | sertanejo
+Chrystian & Ralf | sertanejo
+Cidade Negra | reggae
+Cídia e Dan | forro
+Circuladô de Fulô | mpb
+Clara Nunes | samba
+Clarissa | pop
+Cláudia Leitte | axe
+Cláudia Telles | romantica
+Claudinho e Buchecha | funk
+Claudinho e Bochecha | funk
+Claudio Fontana | romantica
+Cláudio Zoli | pop
+Clayton e Romario | sertanejo
+Cleber e Cauan | sertanejo
+Cleiton e Camargo | sertanejo
+Cogumelo Plutão | rock
+Companhia do Pagode | samba
+Conde do Forró | forro
+Conrado e Aleksandro | sertanejo
+Copacabana Beat | forro
+Coral Kemuel | gospel
+Corpo e Alma | samba
+CPM 22 | rock
+Cravo e Canela | samba
+Criolo | rap
+Cristiano Araújo | sertanejo
+Cristina Mel | gospel
+Dadá Boladão | funk
+Dallas Company | sertanejo
+Dalto | romantica
+Dalvan | sertanejo
+Damares | gospel
+Dani Russo | forro
+Daniel | sertanejo
+Daniel e Camilo | infantil
+Daniel Garcia | filmes
+Daniela Araújo | gospel
+Daniela Mercury | axe
+Danielle Cristina | gospel
+Danni Carlos | pop
+Davi Sacer | gospel
+David Quinlan | gospel
+Day & Lara | sertanejo
+D'Black | pop
+Dead Fish | rock
+Deborah Blando | pop
+Deborah Blanco | pop
+Deigma Marques | gospel
+Delino Marçal | gospel
+Delley e Dorivan | sertanejo
+Demétrius | rock
+Demônios da Garoa | samba
+Demonios da Garoa | samba
+Denner Ferrari | sertanejo
+Dennis DJ | funk
+Dennis | funk
+Deny e Dino | rock
+Desejo de Menina | forro
+Detonautas | rock
+Di Paullo e Paulino | sertanejo
+Di Paulo e Paulinho | sertanejo
+Di Paulo e Paulino | sertanejo
+Di Propósito | samba
+Diana | romantica
+Diante do Trono | gospel
+Diego e Arnaldo | sertanejo
+Diego e Victor Hugo | sertanejo
+Diego e Victo Hugo | sertanejo
+Diego Faria | forro
+Dilsinho | samba
+Diogo Nogueira | samba
+DJ Guuga | funk
+DJ Ivis | forro
+DJ-D | funk
+Djavan | mpb
+Djonga | rap
+Doce Encontro | brega
+Dolores Duran | mpb
+Dom e Ravel | romantica
+Dominguinhos | forro
+Dominó | pop
+Domino | pop
+Donizette | sertanejo
+Dorival Caymmi | mpb
+Douglas e Vinícius | sertanejo
+Dr. Silvana e Cia | pop
+Dream Team do Passinho | funk
+Duda Beat | pop
+Dudu Nobre | samba
+Duduca e Dalvan | sertanejo
+É o Tchan | axe
+Ed Motta | mpb
+Ednardo | mpb
+Edson & Hudson | sertanejo
+Edson e Vinicius | sertanejo
+Edson Gomes | reggae
+Edu Ribeiro | samba
+Eduardo Costa | sertanejo
+Eduardo Dusek | rock
+Edy Britto e Samuel | sertanejo
+Egotrip | rock
+Elaine Martins | gospel
+Elba Ramalho | forro,mpb
+Eli Soares | gospel
+Eliana de Lima | samba
+Elias Monkbel | forro
+Elimar Santos | romantica
+Elymar Santos | romantica
+Elis Regina | mpb
+Elson | forro
+Elson do Forrogode | forro
+Elza Soares | samba
+Emicida | rap
+Emilio e Eduardo | sertanejo
+Emilio Santiago | mpb,romantica
+Engenheiros do Hawaii | rock
+Enzo Rabelo | sertanejo
+Erasmo Carlos | rock
+Eric & Matheus | sertanejo
+Eric Land | forro
+Erick e Léo | sertanejo
+Esteban | pop
+Etiene Pires | gospel
+Evaldo Braga | brega
+Evoney Fernandes | forro
+Exaltasamba | samba
+Exaltassamba | samba
+Expressão Vocal | gospel
+Eyshila | gospel
+Fabinho Testado | forro
+Fábio Jr | romantica
+Fábio Jr. | romantica
+Fafá de Belém | mpb
+Fagner | mpb
+Falamansa | forro
+Falcão | brega
+Fanzine | pop
+Fat Family | pop
+FBC | rap
+Felipe Amorim | forro
+Felipe Araújo | sertanejo
+Felipe Dylon | pop
+Felipe e Falcão | sertanejo
+Felipe e Ferrari | sertanejo
+Felipe e Murilo | sertanejo
+Felipe e Rodrigo | sertanejo
+Fernanda Abreu | pop
+Fernanda Brum | gospel
+Fernanda Takai | pop
+Fernandinho | gospel
+Fernando & Sorocaba | sertanejo
+Fernando Mendes | romantica
+Ferrugem | samba
+Fiduma e Jeca | sertanejo
+Filipe Ret | rap
+Filosofia Reggae | reggae
+Fiuk | pop
+Flávio Venturini | mpb
+Floribella | infantil
+Forró Boys | forro
+Forró do Muido | forro
+Forró Perfeito | forro
+Franco | samba
+Frank Aguiar | forro
+Fred & Gustavo | sertanejo
+Frei Guilson | gospel
+Frejat | rock
+Fresno | rock
+Frozen 2 | filmes
+Fundo de Quintal | samba
+Funk Como Le Gusta | pop
+Furacão Love | brega
+Gabriel Diniz | forro
+Gabriel Gava | sertanejo
+Gabriel O Pensador | rap
+Gabriel Valim | sertanejo
+Gabriela Rocha | gospel
+Gaby Amarantos | brega
+Gal Costa | mpb
+Galinha Pintadinha | infantil
+Gang do Samba | axe
+Garota Safada | forro
+Gasparzinho | forro
+Genival Lacerda | forro
+George Henrique & Rodrigo | sertanejo
+Geovany Reis e Fabricio | sertanejo
+Geraldo Azevedo | mpb
+Geraldo Vandre | mpb
+Gian & Giovani | sertanejo
+Gilberto & Gilmar | sertanejo
+Gilberto Gil | mpb
+Gilliard | romantica
+Gilson | romantica
+Gilson de Souza | samba
+Gisele Nascimento | gospel
+Giselli Cristina | gospel
+Giulia Be | pop
+Glória | rock
+Gloria Groove | pop
+Goiano e Paraense | sertanejo
+Gonzaguinha | mpb
+Grandão Vaqueiro | forro
+Gretchen | pop
+Gritando HC | rock
+Grupo Bom Gosto | samba
+Grupo Kiloucura | samba
+Grupo Malícia | samba
+Grupo Menos é Mais | samba
+Grupo Pique Novo | samba
+Grupo Pirraça | samba
+Grupo Ponto de Encontro | samba
+Grupo Raça | samba
+Grupo Revelação | samba
+Grupo Rhass | samba
+Grupo Sampa | samba
+Grupo Sem Compromisso | samba
+Grupo Sensação | samba
+Grupo Tradição | sertanejo
+Guilherme & Santiago | sertanejo
+Guilherme Arantes | pop,mpb
+Guilherme e Benuto | sertanejo
+Gustavo Lima | sertanejo
+Gusttavo Lima | sertanejo
+Gustavo Mioto | sertanejo
+Guto e Nando | sertanejo
+Haikaiss | rap
+Hanói-Hanói | rock
+Harmonia do Samba | samba,axe
+Harpa Cristã | gospel
+Hateen | rock
+Heloisa Rosa | gospel
+Henrique & Juliano | sertanejo
+Henrique e Abel | sertanejo
+Henrique e Diego | sertanejo
+Hermes Aquino | mpb
+Heróis da Resistência | rock
+Herva Doce | rock
+Hinos | outros
+Hugo e Guilherme | sertanejo
+Hugo e Tiago | sertanejo
+Hugo Pena e Gabriel | sertanejo
+Humberto e Ronaldo | sertanejo
+Hungria Hip Hop | rap
+Hyldon | mpb
+ID2 | gospel
+Igor Kannário | axe
+Iguinho e Lulinha | forro
+Imaginasamba | samba
+Inimigos da HP | samba
+Inimigos do HP | samba
+Iohannes Imperador | forro
+Ira | rock
+Ira! | rock
+Irmãs Galvão | sertanejo
+Isabella Taviani | mpb
+Isadora Pompeo | gospel
+Isaias Saad | gospel
+Israel e Rodolffo | sertanejo
+Israel e Rodolfo | sertanejo
+Israel Novaes | sertanejo
+Isarel Novaes | sertanejo
+Ivan Lins | mpb
+Ivete Sangalo | axe
+Ivo Mozart | forro
+Ivo Pessoa | romantica
+Iza | pop
+Jads & Jadson | sertanejo
+Jair Rodrigues | samba
+Jaldo Rodrigues | brega
+Jamily | gospel
+Jammil e Uma Noites | axe
+Jane e Herondy | brega
+Jão | pop
+Japãozin | forro
+Japinha Conde | forro
+Jeann e Julio | sertanejo
+Jefferson Moraes | brega
+Jeito Moleque | samba
+Jerry Adriani | romantica
+Jerry Smith | funk
+Jessé | romantica
+Jessé Aguiar | gospel
+Joana | romantica
+Joanna | romantica
+João Bosco | mpb
+João Bosco e Gabriel | sertanejo
+João Bosco e Vinicius | sertanejo
+João Carreiro e Capataz | sertanejo
+João Gilberto | mpb
+João Gomes | forro
+João Gomez | forro
+João Gustavo e Murilo | sertanejo
+João Lucas e Diogo | sertanejo
+João Lucas e Marcelo | sertanejo
+João Mineiro & Marciano | sertanejo
+João Neto e Frederico | sertanejo
+João Nogueira | samba
+João Paulo & Daniel | sertanejo
+João Pedro e Cristiano | sertanejo
+Joaquim e Manuel | sertanejo
+Joelma | brega
+Johnny Hooker | mpb
+Jojo Maronttinni | funk
+Jonas Esticado | forro
+Jorge & Mateus | sertanejo
+Jorge e Matheus | sertanejo
+Jorge Aragão | samba
+Jorge Ben Jor | mpb
+Jorge Vercillo | mpb
+José Augusto | romantica
+José Roberto | brega
+Josué Bom de Faixa | forro
+Jota Quest | pop,rock
+Jottapê | funk
+Jovem Dionísio | pop
+Juliano Cesar | sertanejo
+Juliette | pop
+Júlio César | romantica
+Juventude AS | samba
+kamaitachi | rap
+Kadu Martins | forro
+Kaio e Bruninho | brega
+Kaoma | axe
+Karametade | samba
+Karol Conka | rap
+Kátia | romantica
+Katinguelê | samba
+Kell Smith | pop
+Kelly Key | pop
+Kemilly Santos | gospel
+Kevi Jonny | forro
+Kevin o Chris | funk
+Kevinho | funk
+Kid Abelha | pop,rock
+Kiko Zambianchi | rock
+KLB | pop
+Kléber Lucas | gospel
+Kleiton e Adriano | sertanejo
+Kleiton e Kledir | mpb
+Kleo Dibah & Rafael | sertanejo
+KVSH | dance
+L7NNON | rap
+Lady Zu | pop
+Lagum | pop
+Laís | pop
+Lara Suleiman | infantil
+Larissa Cardoso | gospel
+Larissa Manoela | pop,infantil
+Latino | pop
+Lauana Prado | sertanejo
+Laura Souguellis | gospel
+Lázaro | gospel
+Leandro & Leonardo | sertanejo
+Leandro Borges | gospel
+Leandro Léo | sertanejo
+Leci Brandão | samba
+Legião Urbana | rock
+Leila Pinheiro | mpb
+Lenine | mpb
+Leno e Lilian | rock
+Léo Canhoto e Robertinho | sertanejo
+Léo e Junior | sertanejo
+Léo e Raphael | sertanejo
+Léo Jaime | rock
+Léo Magalhães | sertanejo
+Leo Rodriguez | sertanejo
+Léo Santana | axe
+Leonardo | sertanejo
+Leonardo Gonçalves | gospel
+Leoni | rock
+Leva Noiz | samba
+Lexa | pop,funk
+Liah | pop
+Limão com Mel | forro
+Lindomar Castilho | brega
+Liniker e os Caramelows | mpb
+Liu e Léu | sertanejo
+Livres Para Adorar | gospel
+Lobão | rock
+Los Hermanos | rock
+Lou Garcia | pop
+Loubet | sertanejo
+Lourenço & Lourival | sertanejo
+LS Jack | pop
+Luan e Vanessa | sertanejo
+Luan Estilizado | forro
+Luan Pereira | sertanejo
+Luan Santana | sertanejo
+Lucas e Luan | sertanejo
+Lucas e Orelha | sertanejo
+Lucas e Thiago | sertanejo
+Lucas Lucco | sertanejo
+Lucas Reis & Thácio | sertanejo
+Luciana Mello | mpb
+Ludmila Ferber | gospel
+Ludmilla | funk,pop
+Luísa Sonza | pop
+Luiz Ayrão | samba
+Luiz Caldas | axe
+Luiz Cláudio e Giuliano | sertanejo
+Luiz Gonzaga | forro
+Luiz Melodia | mpb
+Luiz Poderoso Chefão | brega
+Luiz Vieira | mpb
+Luiza e Maurilio | sertanejo
+Luiza Possi | mpb
+Luka | pop
+Lulu Santos | pop
+Lupicínio Rodrigues | samba
+Maiara & Maraisa | sertanejo
+Malta | rock
+Malu | pop
+Mamonas Assassinas | rock
+Maneva | reggae
+Mano a Mano | samba
+Mano Walter | forro
+Manoel Gomes | brega
+Manu Gavassi | pop
+Marcelinho de Lima | samba
+Marcelo Augusto | romantica
+Marcelo D2 | rap
+Marcelo Jeneci | mpb
+Márcia Fellipe | forro
+Márcio Greick | romantica
+Márcio Greyck | romantica
+Marco e Mário | sertanejo
+Marcos e Bellutti | sertanejo
+Marcos e Belutti | sertanejo
+Marcos e Fernando | sertanejo
+Marcos Sabino | pop
+Marcus Viana | mpb
+Marcynho Sensação | forro
+Margareth Menezes | axe
+Mari Fernandez | forro
+Maria Bethânia | mpb
+Maria Cecília e Rodolfo | sertanejo
+Maria Gadú | mpb
+Maria Marçal | gospel
+Maria Rita | mpb,samba
+Mariana Fagundes | sertanejo
+Mariana Valadão | gospel
+Marília Mendonça | sertanejo
+Marília Mendoça | sertanejo
+Marina Elali | pop
+Marina Lima | pop
+Marina Sena | pop
+Marisa Monte | mpb
+Marjorie Estiano | pop
+Markinhos Moura | brega
+Marlon e Maicon | sertanejo
+Marquinho Sathan | samba
+Marquinhos Gomes | gospel
+Martinha | romantica
+Martinho da Vila | samba
+Maskavo | reggae
+Mastruz com Leite | forro
+Matanza | rock
+Mateus e Cristiano | sertanejo
+Matheus e Kauan | sertanejo
+Matheus Fernandes | forro
+Matheuzinho | funk
+Matogrosso e Mathias | sertanejo
+Matuê | rap
+Maurício e Eduardo | sertanejo
+Maurício e Mauri | sertanejo
+Mauricio Manieri | romantica
+Maurício Mattar | romantica
+Max Viana | mpb
+Maysa | mpb
+MC Andinho | funk
+MC Bob Bum | funk
+Mc Bola | funk
+Mc Bruninha | funk
+Mc Bruninho | funk
+MC Cidinho e Doca | funk
+MC Delano | funk
+Mc Don Juan | funk
+MC Federado e os Leleks | funk
+MC G15 | funk
+MC Gui | funk
+MC Guimê | funk
+Mc João | funk
+MC Kekel | funk
+MC Kevin O Chris | funk
+MC Kevinho | funk
+MC Koringa | funk
+MC L da Vinte | funk
+MC Leozinho | funk
+MC Livinho | funk
+Mc Loma | funk
+Mc Lon | funk
+Mc Maneirinho | funk
+MC Marcinho | funk
+MC Moana | funk
+Mc Nandinho | funk
+MC Pedrinho | funk
+MC Pocahontas | funk
+MC Poze do Rodo | funk
+MC RD | funk
+MC Rogerinho | funk
+MC Sapão | funk
+MC Tato | funk
+MC Treyce | funk
+Mc Zaac | funk
+MCs Jhowzinho & Kadinho | funk
+MCs Zaac & Jerry | funk
+MD Chefe | rap
+Melanina Carioca | funk
+Melim | pop
+Melody | funk
+Menor | funk
+Menudo | latina
+Metrô | pop
+Micael | pop
+Michel Teló | sertanejo
+Midian Lima | gospel
+Miguel Gustavo | outros
+Milionário e José Rico | sertanejo
+Milionário e Marciano | sertanejo
+Milton Nascimento | mpb
+Ministério Pedras Vivas | gospel
+Ministério Zoe | gospel
+Moacyr Franco | romantica
+Moana | filmes
+Moana (Disney) | filmes
+Moinho da Bahia | axe
+Molejo | samba
+Montenegro | mpb
+Moraes Moreira | mpb
+Motirô | samba
+Mr. Catra | funk
+Mumuzinho | samba
+Mundo Bita | infantil
+Munhoz e Mariano | sertanejo
+Murilo Huff | sertanejo
+Nadson, o Ferinha | brega
+Naiara Azevedo | sertanejo
+Naldo Benny (Naldo) | funk
+Naldo Benny | funk
+Nalva Aguiar | sertanejo
+Nana Caymmi | mpb
+Nando Moreno | sertanejo
+Nando Reis | rock,mpb
+Nani Azevedo | gospel
+Natalia Siqueira | gospel
+Natiruts | reggae
+Nattan | forro
+Nego do Borel | funk
+Negra Li | rap
+Negritude Júnior | samba
+Nelson Gonçalves | romantica
+Nelson Ned | romantica
+Nenho | brega
+Nenhum de Nós | rock
+Netinho | axe
+Neto LX | forro
+Ney Matogrosso | mpb
+Nico Rezende | pop
+Nilton César | romantica
+Nivaldo Marques | forro
+Nívea Soares | gospel
+NX Zero | rock
+O Rappa | rock,reggae
+O Surto | rock
+O Teatro Mágico | mpb
+Odair José | brega
+Olodum | axe
+Onze:20 | pop,reggae
+Orlando Dias | romantica
+Orquestra da Terra | sertanejo
+Oruam | rap
+Os Abelhudos | infantil
+Os Barões da Pisadinha | forro
+Os Incríveis | rock
+Os Morenos | samba
+Os Originais do Samba | samba
+Os Paralamas do Sucesso | rock
+Paralamas do Sucesso | rock
+Os Saltimbancos | infantil
+Os Serranos | sertanejo
+Os Travessos | samba
+Os Virgulóides | rock
+Oswaldo Montenegro | mpb
+Otto | mpb
+Ovelha | romantica
+P.O. Box | pop
+Pabllo Vittar | pop
+Pablo | brega
+Padre Marcelo Rossi | gospel
+Padre Zezinho | gospel
+Palavra Cantada | infantil
+Paolo | pop
+Papas da Língua | rock
+Parabéns | infantil
+Parangolé | axe
+Pastor Antônio Cirilo | gospel
+Patati e Patatá | infantil
+Pato Fu | rock
+Patrícia Marx | pop
+Paula Fernandes | sertanejo
+Paula Mattos | sertanejo
+Paulinho da Viola | samba
+Paulinho Moska | mpb
+Paulo Cesar Baruk | gospel
+Paulo Diniz | mpb
+Paulo Mocelin | sertanejo
+Paulo Neto | gospel
+Paulo Pires | forro
+Paulo Ricardo | rock
+Paulo Sérgio | romantica
+Peão Carreiro & Zé Paulo | sertanejo
+Pedro e Thiago | sertanejo
+Pedro Henrique e Fernando | sertanejo
+Pedro Mariano | mpb
+Pedro Paulo e Alex | sertanejo
+Pedro Sampaio | funk
+Pena Branca e Xavantinho | sertanejo
+Peninha | romantica
+Pepê e Neném | pop
+Pepeu Gomes | mpb,rock
+Péricles | samba
+Perlla | pop
+Petter Ferraz | forro
+PG | gospel
+Pholhas | rock
+Pikeno e Menor | funk
+Pimenta do Reino | pop
+Pimpinela | latina
+Pitty | rock
+Pixote | samba
+Placa Luminosa | pop
+Planta & Raiz | reggae
+Plebe Rude | rock
+Pocah | funk
+Poesia Acústica 10 | rap
+Pokémon | infantil
+Pollo | rap
+Premeditando o Breque | rock
+Preta Gil | pop
+Preto no Branco | gospel
+Priscilla Alcantara | gospel
+Priscilla Senna | brega
+Projota | rap
+Psirico | axe
+Quatro Por Um | gospel
+Raça Negra | samba
+Raça Pura | axe
+Racionais MC's | rap
+Rádio Táxi | rock
+Rael | rap
+Rafa e Pipo Marques | forro
+Raí Saia Rodada | forro
+Saia Rodada | forro
+Raimundos | rock
+Raiz Coral | gospel
+Rapazolla | samba
+Raphaela Santos | brega
+Rasta Chinela | forro
+Rastapé | forro
+Raul Seixas | rock
+Razão Brasileira | samba
+Reginaldo Rossi | brega
+Regis Danese | gospel
+Rei da Cacimbinha | forro
+Rei Leão | filmes
+Reinaldo | samba
+Renascer Praise | gospel
+Renata Brasil | gospel
+Renato e Seus Blue Caps | rock
+Renato Russo | rock
+Renato Teixeira | sertanejo
+Renato Terra | sertanejo
+Renê e Ronaldo | sertanejo
+Restart | pop
+Ricardo Chaves | axe
+Ricardo e Joao Fernando | sertanejo
+Ricardo Ozcar | forro
+Rick & Renner | sertanejo
+Rionegro & Solimões | sertanejo
+Rio Negro e Solimões | sertanejo
+Rita Lee | rock
+Ritchie | pop
+Roberta Campos | mpb
+Roberta Miranda | sertanejo
+Roberta Sá | mpb
+Roberto Carlos | romantica
+Roberto Menescal | mpb
+Robinson Monteiro | gospel
+Rodrigo Faro | pop
+Rodriguinho | samba
+Rogerinho | funk
+Ronaldo e os Barcelos | infantil
+Ronnie Cord | rock
+Ronnie Von | romantica
+Rony e Baby | forro
+Rosana | romantica
+Rose Nascimento | gospel
+Rouge | pop
+Roupa Nova | romantica,pop
+Royce do Cavaco | samba
+RPM | rock
+Rubel | mpb
+Sá e Guarabyra | mpb
+Sá, Rodrix e Guarabyra | mpb
+Sambô | samba
+Sampa Crew | pop
+Sandra de Sá | mpb
+Sandro e Gustavo | sertanejo
+Sandy | pop
+Sandy & Junior | pop
+Sarah Farias | gospel
+Saulo Fernandes | axe
+Scalene | rock
+Secos & Molhados | rock
+Sempre Livre | rock
+Sepultura | rock
+Sérgio Reis | sertanejo
+Seu Jorge | mpb,samba
+Shirley Carvalhaes | gospel
+Sidney Magal | pop
+Silva | pop
+Silvano Salles | brega
+Simone | mpb
+Simone & Simaria | sertanejo
+Simone Mendes | sertanejo
+Skank | rock
+Só Pra Contrariar | samba
+Só Preto Sem Preconceito | samba
+Solange Almeida | forro
+Soraya Moraes | gospel
+Sorriso Maroto | samba
+Soweto | samba
+Spártaco | romantica
+Strike | rock
+Supercombo | rock
+Supla | rock
+Taiguara | mpb
+Tânia Mara | pop
+Tarcísio do Acordeon | forro
+Taryn | pop
+Tarzan | filmes
+Tarzan (Disney) | filmes
+Tati Quebra Barraco | funk
+Tati Zaqui | funk
+Taty Pink | funk
+Tayrone | brega
+Tayrone Cigano | brega
+Tays Reis | axe
+Tchakabum | axe
+Tchê Garotos | sertanejo
+Teodoro e Sampaio | sertanejo
+Terceira Dimensão | sertanejo
+Terra Samba | axe
+Terrasamba | axe
+Tetê Espíndola | mpb
+Teto | rap
+Thaeme e Thiago | sertanejo
+Thalles Roberto | gospel
+Thayná Bitencourt | gospel
+The Fevers | rock
+Thiago Aquino | brega
+Thiago Brava | sertanejo
+Thiaguinho | samba
+Tiago Iorc | pop
+Tião Carreiro & Pardinho | sertanejo
+Tião Carreio e Pardinho | sertanejo
+Tiê | mpb
+Tierry | brega
+Tigres de Bengala | sertanejo
+Tihuana | rock
+Tim Maia | mpb
+Timbalada | axe
+Titãs | rock
+Tom Jobim | mpb
+Ton Carfi | gospel
+Toni Garrido | reggae
+Tonico & Tinoco | sertanejo
+Tony Carreira | europeia,romantica
+Toque No Altar | gospel
+Toquinho | mpb
+Trazendo a Arca | gospel
+Trem da Alegria | infantil
+Treyce | funk
+Tribalistas | mpb
+Tribo da Periferia | rap
+Tribo de Jah | reggae
+Trio Alto Astral | forro
+Trio Bravana | sertanejo
+Trio do Brasil | sertanejo
+Trio Nordestino | forro
+Trio Parada Dura | sertanejo
+Tunai | mpb
+Turma do Pagode | samba
+Ultraje a Rigor | rock
+Ultrage a Rigor | rock
+Unha Pintada | forro
+Valesca Mayssa | forro
+Valesca Popozuda | funk
+Vander Lee | mpb
+Vanessa da Mata | mpb
+Vanessa Rangel | pop
+Vânia Abreu | mpb
+Vanusa | romantica
+Veronica Sabino | pop
+Vicente Nery | brega
+Victor & Leo | sertanejo
+Vida Reluz | gospel
+Villa Baggage | sertanejo
+Vinícius Cantuária | mpb
+Vinicius de Moraes | mpb
+Vinicius de Morais | mpb
+Vinny | pop
+Vitão | pop
+Vitinho Imperador | forro
+Vitor Fernandes | forro
+Vítor Hugo | brega
+Vitor Kley | pop
+VMZ | rap
+Voz da Verdade | gospel
+Vulgo FK | rap
+Waldick Soriano | brega
+Wanderléa | romantica
+Wanderlei Cardoso | romantica
+Wanderley Cardoso | romantica
+Wanderley Andrade | brega
+Wando | brega
+Wanessa | pop
+Wanessa Camargo | pop
+Washington Brasileiro | forro
+Wesley Safadão | forro
+Whadi Gama | forro
+WIU | rap
+Xamã | rap
+Xand Avião | forro
+Xandy Avião | forro
+XCalypso | brega
+Xis | rap
+Xuxa | infantil
+Yago e Juliano | sertanejo
+Yahoo | pop
+Yasmin Santos | sertanejo
+Zé Carreiro e Carreirinho | sertanejo
+Zé Felipe | sertanejo
+Zé Geraldo | mpb
+Zé Henrique e Gabriel | sertanejo
+Zé Neto e Cristiano | sertanejo
+Zé Ramalho | mpb
+Zé Ricardo e Thiago | sertanejo
+Zé Vaqueiro | forro
+Zeca Baleiro | mpb
+Zeca Pagodinho | samba
+Zélia Duncan | mpb
+Zero | rock
+Zezé Di Camargo & Luciano | sertanejo
+Zizi Possi | mpb

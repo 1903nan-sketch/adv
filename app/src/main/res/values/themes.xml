@@ -35,4 +35,14 @@
         <item name="android:paddingStart">14dp</item>
         <item name="android:paddingEnd">14dp</item>
     </style>
+
+    <style name="ListChip" parent="Chip">
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:background">@drawable/chip_list_bg</item>
+        <item name="android:textColor">@color/chip_list_text</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+    </style>
 </resources>

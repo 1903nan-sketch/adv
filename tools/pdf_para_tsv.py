@@ -15,7 +15,9 @@ import sys
 LINHA = re.compile(r'^\s*(\S+)\s+(.+?)\s{2,}(\d{4,6})(?:\s+(.+?))?\s*$')
 # Cantor muito longo encostado no número (ex.: "...BLACKPINK26368    SG").
 LINHA_COLADA = re.compile(r'^\s*(\S+)\s+(.+?)\s*(\d{5})(?:\s+(.+?))?\s*$')
-IGNORAR = re.compile(r'HD-OK|NÚMERO|Página \d+ de')
+# Cabeçalho e rodapé de cada página. Cuidado: há músicas com "NÚMERO" no título
+# ("MEU NÚMERO"), então o cabeçalho é reconhecido pela linha inteira.
+IGNORAR = re.compile(r'HD-OK|^\s*ATT\s+CANTOR\s+NÚMERO\s+MÚSICA\s*$|^\s*Página \d+ de \d+\s*$')
 
 
 def converter(entrada, saida):

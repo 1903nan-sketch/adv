@@ -12,6 +12,7 @@
     android:paddingBottom="10dp">
 
     <LinearLayout
+        android:id="@+id/code_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/code_bg"
