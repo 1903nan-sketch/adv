@@ -29,10 +29,13 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 - Pode misturar música e cantor: `hello adele`. Se o filtro **Música** ou **Cantor** não
   achar nada, o app procura nos dois sozinho e avisa.
 - Aceita pequenos erros de digitação: `bohemian rapsody`, `bom jovi`, `whitney huston`.
+- Aceita nomes escritos "pelo som": `xakira`, `uitney huston`, `ed xiran`, `bionce`.
 - Filtre por **estilo musical** na segunda fileira de botões (role para o lado):
   Pop, Rock, Românticas, R&B e Soul, Dance, Rap e Hip-Hop, Latinas, Country,
   Jazz e Blues, Filmes e Musicais, Reggae, Italianas e Europeias, K-pop.
-  O estilo funciona junto com a busca (ex.: estilo Românticas + `love`).
+  O estilo funciona junto com a busca (ex.: estilo Românticas + `love`). Se a música
+  não for do estilo marcado, ela aparece mesmo assim, com o aviso "Nada em …".
+- A versão instalada aparece no topo da tela.
 - Toque numa música para **copiar o número**.
 
 ## Atualizar a lista

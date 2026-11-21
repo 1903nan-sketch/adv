@@ -73,7 +73,8 @@ public class MainActivity extends Activity {
         songSearch = new SongSearch(loadSongs());
         buildGenreChips(savedInstanceState == null ? null : savedInstanceState.getString(STATE_GENRE));
         ((TextView) findViewById(R.id.subtitle))
-                .setText(getString(R.string.subtitle, numberFormat.format(songSearch.size())));
+                .setText(getString(R.string.subtitle, numberFormat.format(songSearch.size()),
+                        BuildConfig.VERSION_NAME));
 
         adapter = new SongAdapter();
         list.setAdapter(adapter);
@@ -162,6 +163,9 @@ public class MainActivity extends Activity {
         chip.setId(id);
         chip.setText(label);
         chip.setSaveEnabled(false);
+        // Criado por código, o botão não herda "clicável" do tema: sem isso o toque não funciona.
+        chip.setClickable(true);
+        chip.setFocusable(true);
         RadioGroup.LayoutParams lp = new RadioGroup.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, dp(34));
         lp.setMarginEnd(dp(8));
@@ -221,6 +225,9 @@ public class MainActivity extends Activity {
                     : getString(R.string.total_genre, num, Genres.LABELS.get(genre)));
         } else if (n == 0) {
             count.setText(R.string.no_results);
+        } else if (r.kind == SongSearch.Kind.OTHER_GENRE) {
+            count.setText(getResources().getQuantityString(R.plurals.results_other_genre, n, num,
+                    Genres.LABELS.get(genre)));
         } else if (r.kind == SongSearch.Kind.WIDENED) {
             count.setText(getResources().getQuantityString(R.plurals.results_widened, n, num));
         } else if (r.kind == SongSearch.Kind.FUZZY) {

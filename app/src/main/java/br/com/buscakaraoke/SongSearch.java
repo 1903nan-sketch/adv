@@ -27,6 +27,8 @@ final class SongSearch {
         EXACT,
         /** Não achou no campo escolhido, mas achou procurando em música e cantor. */
         WIDENED,
+        /** Não achou no estilo escolhido, mas achou em outros estilos. */
+        OTHER_GENRE,
         /** Só achou aceitando erros de digitação (pode estar vazio). */
         FUZZY
     }
@@ -84,30 +86,40 @@ final class SongSearch {
 
     /** @param genre chave do estilo ("rock"...) ou {@code null} para todos. */
     Result search(String rawQuery, Field field, String genre) {
-        List<Song> base = field == Field.TITLE ? byTitle : byArtist;
+        List<Song> all = field == Field.TITLE ? byTitle : byArtist;
+        List<Song> inGenre = all;
         if (genre != null) {
-            List<Song> only = new ArrayList<>();
-            for (Song s : base) {
-                if (s.hasGenre(genre)) only.add(s);
+            inGenre = new ArrayList<>();
+            for (Song s : all) {
+                if (s.hasGenre(genre)) inGenre.add(s);
             }
-            base = only;
         }
         String q = Song.normalize(rawQuery);
-        if (q.isEmpty()) return new Result(Kind.LIST, base);
+        if (q.isEmpty()) return new Result(Kind.LIST, inGenre);
 
         String[] tokens = requiredTokens(q);
         String compact = q.replace(" ", "");
 
-        List<Song> r = exact(q, tokens, compact, field, base);
+        // 1) Texto exato: no estilo escolhido e, se não achar, em todos os estilos.
+        List<Song> r = exact(q, tokens, compact, field, inGenre);
         if (!r.isEmpty()) return new Result(Kind.EXACT, r);
-
         if (field != Field.ALL) {
-            r = exact(q, tokens, compact, Field.ALL, base);
+            r = exact(q, tokens, compact, Field.ALL, inGenre);
             if (!r.isEmpty()) return new Result(Kind.WIDENED, r);
         }
+        if (genre != null) {
+            r = exact(q, tokens, compact, field, all);
+            if (r.isEmpty() && field != Field.ALL) r = exact(q, tokens, compact, Field.ALL, all);
+            if (!r.isEmpty()) return new Result(Kind.OTHER_GENRE, r);
+        }
 
-        r = fuzzy(tokens, field, base);
-        if (r.isEmpty() && field != Field.ALL) r = fuzzy(tokens, Field.ALL, base);
+        // 2) Com erros de digitação ou escrito "pelo som".
+        r = fuzzy(tokens, field, inGenre);
+        if (r.isEmpty() && field != Field.ALL) r = fuzzy(tokens, Field.ALL, inGenre);
+        if (r.isEmpty() && genre != null) {
+            r = fuzzy(tokens, field, all);
+            if (r.isEmpty() && field != Field.ALL) r = fuzzy(tokens, Field.ALL, all);
+        }
         return new Result(Kind.FUZZY, r);
     }
 
@@ -173,18 +185,27 @@ final class SongSearch {
         return f == Field.TITLE ? s.titleWords : f == Field.ARTIST ? s.artistWords : s.allWords;
     }
 
+    private static String[] sounds(Song s, Field f) {
+        return f == Field.TITLE ? s.titleSounds : f == Field.ARTIST ? s.artistSounds : s.allSounds;
+    }
+
     // ----------------------------------------------- com erros de digitação
 
     private List<Song> fuzzy(String[] tokens, Field field, List<Song> base) {
+        String[] tokenSounds = new String[tokens.length];
+        for (int i = 0; i < tokens.length; i++) tokenSounds[i] = Song.sound(tokens[i]);
         List<Song> hits = new ArrayList<>();
         List<Integer> scores = new ArrayList<>();
         for (Song s : base) {
             String hay = hay(s, field);
             String[] words = words(s, field);
+            String[] sounds = sounds(s, field);
             int total = 0;
-            for (String t : tokens) {
+            for (int i = 0; i < tokens.length; i++) {
+                String t = tokens[i];
                 int max = allowedErrors(t);
                 int d = hay.contains(t) ? 0 : bestDistance(t, words, max);
+                if (d > max) d = bestDistance(tokenSounds[i], sounds, max);
                 if (d > max) {
                     total = -1;
                     break;

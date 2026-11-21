@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Busca Karaokê</string>
-    <string name="subtitle">%1$s músicas internacionais</string>
+    <string name="subtitle">%1$s músicas internacionais · versão %2$s</string>
     <string name="mode_all">Tudo</string>
     <string name="mode_song">Música</string>
     <string name="mode_artist">Cantor</string>
@@ -24,9 +24,13 @@
         <item quantity="one">Nada igual · %1$s música parecida</item>
         <item quantity="other">Nada igual · %1$s músicas parecidas</item>
     </plurals>
+    <plurals name="results_other_genre">
+        <item quantity="one">Nada em %2$s · %1$s resultado em outro estilo</item>
+        <item quantity="other">Nada em %2$s · %1$s resultados em outros estilos</item>
+    </plurals>
     <string name="no_results">Nenhum resultado</string>
     <string name="empty_title">Nenhuma música encontrada</string>
-    <string name="empty_body">Confira a grafia ou troque o filtro acima.</string>
+    <string name="empty_body">Confira a grafia. Esta lista só tem músicas internacionais: cantores brasileiros ficam na lista nacional.</string>
     <string name="no_title">(sem título na lista)</string>
     <string name="att">ATT %1$s</string>
     <string name="copied">Número %1$s copiado</string>

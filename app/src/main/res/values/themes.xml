@@ -17,6 +17,8 @@
         <item name="android:layout_height">36dp</item>
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:button">@null</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
         <item name="android:background">@drawable/chip_bg</item>
         <item name="android:textColor">@color/chip_text</item>
         <item name="android:textSize">14sp</item>

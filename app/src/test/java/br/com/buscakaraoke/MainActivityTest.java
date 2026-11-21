@@ -7,6 +7,8 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.os.SystemClock;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -51,16 +53,30 @@ public class MainActivityTest {
         ShadowLooper.idleMainLooper();
     }
 
-    private static void mode(MainActivity a, int id) {
-        ((RadioButton) a.findViewById(id)).performClick();
+    /** Toque de verdade (dedo na tela), não um atalho de código. */
+    static void tap(View v) {
+        assertTrue("botão sem tamanho na tela", v.getWidth() > 0 && v.getHeight() > 0);
+        long t = SystemClock.uptimeMillis();
+        float x = v.getWidth() / 2f, y = v.getHeight() / 2f;
+        MotionEvent down = MotionEvent.obtain(t, t, MotionEvent.ACTION_DOWN, x, y, 0);
+        MotionEvent up = MotionEvent.obtain(t, t + 60, MotionEvent.ACTION_UP, x, y, 0);
+        v.dispatchTouchEvent(down);
+        v.dispatchTouchEvent(up);
+        down.recycle();
+        up.recycle();
         ShadowLooper.idleMainLooper();
+    }
+
+    private static void mode(MainActivity a, int id) {
+        tap(a.findViewById(id));
+        assertTrue("o filtro não ficou marcado", ((RadioButton) a.findViewById(id)).isChecked());
     }
 
     @Test
     public void carregaTodasAsMusicasDoPdf() {
         MainActivity a = start();
         assertEquals(3920, results(a).size());
-        assertEquals("3.920 músicas internacionais",
+        assertEquals("3.920 músicas internacionais · versão " + BuildConfig.VERSION_NAME,
                 ((TextView) a.findViewById(R.id.subtitle)).getText().toString());
     }
 
@@ -150,7 +166,15 @@ public class MainActivityTest {
         MainActivity a = start();
         type(a, "dancing queen");
         ListView list = a.findViewById(R.id.list);
-        list.performItemClick(null, 0, 0);
+        View row = list.getChildAt(0);
+        long t = SystemClock.uptimeMillis();
+        float x = row.getWidth() / 2f, y = row.getTop() + row.getHeight() / 2f;
+        MotionEvent down = MotionEvent.obtain(t, t, MotionEvent.ACTION_DOWN, x, y, 0);
+        MotionEvent up = MotionEvent.obtain(t, t + 60, MotionEvent.ACTION_UP, x, y, 0);
+        list.dispatchTouchEvent(down);
+        list.dispatchTouchEvent(up);
+        ShadowLooper.idleMainLooper();
+        org.robolectric.shadows.ShadowLooper.idleMainLooper(1, java.util.concurrent.TimeUnit.SECONDS);
         ClipboardManager cm = (ClipboardManager) a.getSystemService(Context.CLIPBOARD_SERVICE);
         assertEquals("04574", cm.getPrimaryClip().getItemAt(0).getText().toString());
     }
@@ -186,8 +210,8 @@ public class MainActivityTest {
         for (int i = 0; i < g.getChildCount(); i++) {
             RadioButton b = (RadioButton) g.getChildAt(i);
             if (b.getText().toString().equals(label)) {
-                b.performClick();
-                ShadowLooper.idleMainLooper();
+                tap(b);
+                assertTrue("o estilo não ficou marcado: " + label, b.isChecked());
                 return;
             }
         }
@@ -208,8 +232,11 @@ public class MainActivityTest {
         // Estilo + busca.
         type(a, "bon jovi");
         assertEquals("Bon Jovi", results(a).get(0).artist);
+        // Com o estilo Rock marcado, "adele" ainda acha a Adele e avisa que é de outro estilo.
         type(a, "adele");
-        for (Song s : results(a)) assertTrue(!s.artist.equals("Adele"));
+        assertEquals("Adele", results(a).get(0).artist);
+        assertEquals("Nada em Rock · 17 resultados em outros estilos",
+                ((TextView) a.findViewById(R.id.count)).getText().toString());
         type(a, "");
         genre(a, "Românticas");
         screenshot(a, "estilo-romanticas.png");

@@ -198,15 +198,29 @@ public class SongSearchTest {
         SongSearch.Result r = find("love", SongSearch.Field.TITLE, "romantica");
         assertTrue(r.songs.size() > 10);
         for (Song x : r.songs) assertTrue(x.hasGenre("romantica") && x.normTitle.contains("love"));
-        // Adele não é rock: com o filtro Rock ela não aparece.
-        for (Song x : find("adele", SongSearch.Field.ARTIST, "rock").songs) {
-            assertTrue(x.artist, !x.artist.equals("Adele") && x.hasGenre("rock"));
-        }
+        // Adele não é rock: com o filtro Rock ela aparece mesmo assim, avisando o outro estilo.
+        SongSearch.Result adele = find("adele", SongSearch.Field.ARTIST, "rock");
+        assertEquals(SongSearch.Kind.OTHER_GENRE, adele.kind);
+        assertEquals("Adele", adele.songs.get(0).artist);
+        assertEquals(17, adele.songs.size());
         assertEquals(17, find("adele", SongSearch.Field.ARTIST, "pop").songs.size());
     }
 
     private static SongSearch.Result find(String q, SongSearch.Field f, String genre) {
         return search.search(q, f, genre);
+    }
+
+    @Test
+    public void escritoPeloSom() {
+        assertArtistFound("xakira", "Shakira");
+        assertArtistFound("uitney huston", "Whitney Houston");
+        assertArtistFound("ed xiran", "Ed Sheeran");
+        assertArtistFound("bionce", "Beyoncé");
+        assertArtistFound("rianna", "Rihanna");
+        assertArtistFound("metalica", "Metallica");
+        assertArtistFound("rolim stones", "Rolling Stones (The)");
+        assertArtistFound("aerosmit", "Aerosmith");
+        assertFirst("tanderstruck", SongSearch.Field.TITLE, "18592");
     }
 
     @Test

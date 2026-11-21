@@ -26,6 +26,10 @@ final class Song {
     final String[] titleWords;
     final String[] artistWords;
     final String[] allWords;
+    /** As mesmas palavras escritas "pelo som" (ex.: "sheeran" -> "xiran"). */
+    final String[] titleSounds;
+    final String[] artistSounds;
+    final String[] allSounds;
     /** Chaves de estilo (ex.: "pop", "rock"); pode ser vazio. */
     final String[] genres;
 
@@ -48,6 +52,44 @@ final class Song {
         titleWords = words(normTitle);
         artistWords = words(normArtist);
         allWords = words(normAll);
+        titleSounds = sounds(titleWords);
+        artistSounds = sounds(artistWords);
+        allSounds = sounds(allWords);
+    }
+
+    private static String[] sounds(String[] words) {
+        String[] out = new String[words.length];
+        for (int i = 0; i < words.length; i++) out[i] = sound(words[i]);
+        return out;
+    }
+
+    /**
+     * Forma "pelo som" de uma palavra já normalizada, para quem digita nomes em inglês
+     * do jeito que fala: "xakira" = "shakira", "uitney" = "whitney", "xiran" = "sheeran".
+     */
+    static String sound(String w) {
+        String s = w;
+        s = s.replace("sch", "x").replace("sh", "x").replace("ch", "x");
+        s = s.replace("ph", "f").replace("th", "t").replace("wh", "u").replace("ck", "k");
+        s = s.replace("qu", "k").replace("ee", "i").replace("ea", "i").replace("oo", "u").replace("ou", "u");
+        StringBuilder sb = new StringBuilder(s.length());
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            char next = i + 1 < s.length() ? s.charAt(i + 1) : 0;
+            switch (c) {
+                case 'h': continue;
+                case 'w': c = 'u'; break;
+                case 'y': c = 'i'; break;
+                case 'z': c = 's'; break;
+                case 'q': c = 'k'; break;
+                case 'c': c = (next == 'e' || next == 'i' || next == 'y') ? 's' : 'k'; break;
+                default: break;
+            }
+            // Letras repetidas viram uma só ("rolling" = "roling").
+            if (sb.length() > 0 && sb.charAt(sb.length() - 1) == c) continue;
+            sb.append(c);
+        }
+        return sb.toString();
     }
 
     /** Minúsculas, sem acentos, sem apóstrofos e só letras/números separados por espaço. */
