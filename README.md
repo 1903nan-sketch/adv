@@ -6,6 +6,7 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 <p>
   <img src="docs/tela-inicial.png" width="240" alt="Tela inicial">
   <img src="docs/busca-cantor.png" width="240" alt="Busca por cantor">
+  <img src="docs/busca-sem-acento.png" width="240" alt="Busca sem acento">
   <img src="docs/modo-escuro.png" width="240" alt="Modo escuro">
 </p>
 
@@ -20,7 +21,9 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 
 - Digite na caixa de busca. Os resultados aparecem enquanto você digita.
 - Filtros: **Tudo** (música, cantor ou número), **Música** ou **Cantor**.
-- Não importa maiúscula/minúscula, acento ou apóstrofo: `dont trust me` encontra
+- Não precisa de acento: `beyonce` acha "Beyoncé", `cancao do mar` acha "CANÇÃO DO MAR".
+  Com acento também funciona.
+- Não importa maiúscula/minúscula ou apóstrofo: `dont trust me` encontra
   "DON'T TRUST ME", `acdc` encontra "AC/DC".
 - Pode misturar música e cantor: `hello adele`. Se o filtro **Música** ou **Cantor** não
   achar nada, o app procura nos dois sozinho e avisa.

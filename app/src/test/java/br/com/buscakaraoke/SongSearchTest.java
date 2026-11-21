@@ -44,6 +44,12 @@ public class SongSearchTest {
         assertEquals("cantor para \"" + q + "\"", artist, r.songs.get(0).artist);
     }
 
+    private static void assertArtistAmong(String q, String... artists) {
+        List<String> found = new ArrayList<>();
+        for (Song x : find(q, SongSearch.Field.ARTIST).songs) found.add(x.artist);
+        for (String a : artists) assertTrue(a + " em " + found, found.contains(a));
+    }
+
     @Test
     public void buscaVaziaMostraTudo() {
         assertEquals(3920, find("", SongSearch.Field.ALL).songs.size());
@@ -105,6 +111,43 @@ public class SongSearchTest {
         assertArtistFound("michel jackson", "Michael Jackson");
         assertArtistFound("micheal jakson", "Michael Jackson");
         assertEquals(SongSearch.Kind.FUZZY, find("bom jovi", SongSearch.Field.ARTIST).kind);
+    }
+
+    @Test
+    public void semAcentoAchaComAcento() {
+        assertArtistFound("beyonce", "Beyoncé");
+        assertArtistFound("BEYONCE", "Beyoncé");
+        assertArtistFound("bjork", "Björk");
+        // A lista escreve alguns nomes com e sem acento: sem acento acha os dois.
+        assertArtistAmong("julio iglesias", "Júlio Iglesias", "Julio Iglesias");
+        assertArtistAmong("luis miguel", "Luís Miguel", "Luis Miguel");
+        assertFirst("cancao do mar", SongSearch.Field.TITLE, "06363");
+        assertFirst("corazon partio", SongSearch.Field.TITLE, "04105");
+        assertFirst("el bano", SongSearch.Field.TITLE, "24704");
+        assertFirst("la cosa mas bella", SongSearch.Field.TITLE, "18889");
+        assertFirst("de musica ligera", SongSearch.Field.TITLE, "26662");
+        assertFirst("non ce", SongSearch.Field.TITLE, "26165");
+        assertArtistAmong("motley crue", "Mötley Crue", "Mötley Crüe");
+    }
+
+    @Test
+    public void comAcentoTambemAcha() {
+        assertArtistFound("Beyoncé", "Beyoncé");
+        assertFirst("CANÇÃO DO MAR", SongSearch.Field.TITLE, "06363");
+        assertFirst("canção", SongSearch.Field.TITLE, "06363");
+        assertFirst("corazón partío", SongSearch.Field.TITLE, "04105");
+        // Acento "a mais" onde a lista não tem também não atrapalha.
+        assertFirst("hellô", SongSearch.Field.TITLE, "24376");
+        assertArtistFound("adéle", "Adele");
+    }
+
+    @Test
+    public void letrasEspeciais() {
+        assertEquals("royksopp", Song.normalize("Røyksopp"));
+        assertEquals("strasse", Song.normalize("Straße"));
+        assertEquals("aeon", Song.normalize("Æon"));
+        assertEquals("cancao do mar", Song.normalize("CANÇÃO DO MAR"));
+        assertEquals("non ce", Song.normalize("NON C'È"));
     }
 
     @Test

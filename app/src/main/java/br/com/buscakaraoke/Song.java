@@ -48,7 +48,33 @@ final class Song {
         String n = Normalizer.normalize(s, Normalizer.Form.NFD);
         n = MARKS.matcher(n).replaceAll("").toLowerCase(Locale.ROOT);
         n = APOSTROPHES.matcher(n).replaceAll("");
+        n = foldSpecialLetters(n);
         return NON_ALNUM.matcher(n).replaceAll(" ").trim();
+    }
+
+    /** Letras que não perdem o "acento" sozinhas (ø, æ, ß...). */
+    private static String foldSpecialLetters(String n) {
+        StringBuilder out = null;
+        for (int i = 0; i < n.length(); i++) {
+            char c = n.charAt(i);
+            String r;
+            switch (c) {
+                case 'ø': r = "o"; break;
+                case 'æ': r = "ae"; break;
+                case 'œ': r = "oe"; break;
+                case 'ß': r = "ss"; break;
+                case 'ł': r = "l"; break;
+                case 'đ': case 'ð': r = "d"; break;
+                case 'þ': r = "th"; break;
+                case 'ı': r = "i"; break;
+                default: r = null;
+            }
+            if (r != null && out == null) out = new StringBuilder(n.length() + 4).append(n, 0, i);
+            if (out != null) {
+                if (r != null) out.append(r); else out.append(c);
+            }
+        }
+        return out == null ? n : out.toString();
     }
 
     private static String[] words(String norm) {

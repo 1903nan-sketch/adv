@@ -171,6 +171,17 @@ public class MainActivityTest {
     }
 
     @Test
+    public void capturaBuscaSemAcento() throws Exception {
+        MainActivity a = start();
+        type(a, "cancao do mar");
+        assertEquals("06363", results(a).get(0).number);
+        mode(a, R.id.mode_artist);
+        type(a, "beyonce");
+        assertEquals("Beyoncé", results(a).get(0).artist);
+        screenshot(a, "busca-sem-acento.png");
+    }
+
+    @Test
     @Config(qualifiers = "+night")
     public void capturaModoEscuro() throws Exception {
         MainActivity a = start();
