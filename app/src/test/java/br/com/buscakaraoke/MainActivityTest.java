@@ -181,6 +181,52 @@ public class MainActivityTest {
         screenshot(a, "busca-sem-acento.png");
     }
 
+    private static void genre(MainActivity a, String label) {
+        android.widget.RadioGroup g = a.findViewById(R.id.genres);
+        for (int i = 0; i < g.getChildCount(); i++) {
+            RadioButton b = (RadioButton) g.getChildAt(i);
+            if (b.getText().toString().equals(label)) {
+                b.performClick();
+                ShadowLooper.idleMainLooper();
+                return;
+            }
+        }
+        throw new AssertionError("filtro não encontrado: " + label);
+    }
+
+    @Test
+    public void filtroDeEstilo() throws Exception {
+        MainActivity a = start();
+        android.widget.RadioGroup g = a.findViewById(R.id.genres);
+        assertEquals("Todos os estilos", ((RadioButton) g.getChildAt(0)).getText().toString());
+        assertTrue(g.getChildCount() >= 12);
+        genre(a, "Rock");
+        List<Song> r = results(a);
+        assertTrue(r.size() > 1000);
+        for (Song s : r) assertTrue(s.hasGenre("rock"));
+        assertTrue(((TextView) a.findViewById(R.id.count)).getText().toString().startsWith("Rock: "));
+        // Estilo + busca.
+        type(a, "bon jovi");
+        assertEquals("Bon Jovi", results(a).get(0).artist);
+        type(a, "adele");
+        for (Song s : results(a)) assertTrue(!s.artist.equals("Adele"));
+        type(a, "");
+        genre(a, "Românticas");
+        screenshot(a, "estilo-romanticas.png");
+        genre(a, "Todos os estilos");
+        assertEquals(3920, results(a).size());
+    }
+
+    @Test
+    public void estiloSobreviveAGirarATela() {
+        ActivityController<MainActivity> c = Robolectric.buildActivity(MainActivity.class).setup();
+        genre(c.get(), "Latinas");
+        int latinas = results(c.get()).size();
+        c.recreate();
+        ShadowLooper.idleMainLooper();
+        assertEquals(latinas, results(c.get()).size());
+    }
+
     @Test
     @Config(qualifiers = "+night")
     public void capturaModoEscuro() throws Exception {

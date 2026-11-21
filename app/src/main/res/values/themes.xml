@@ -25,4 +25,12 @@
         <item name="android:paddingEnd">18dp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
+
+    <style name="GenreChip" parent="Chip">
+        <item name="android:background">@drawable/chip_genre_bg</item>
+        <item name="android:textColor">@color/chip_genre_text</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+    </style>
 </resources>

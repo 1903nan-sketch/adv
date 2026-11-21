@@ -9,6 +9,8 @@
     <string name="hint_song">Nome da música</string>
     <string name="hint_artist">Nome do cantor</string>
     <string name="clear">Limpar busca</string>
+    <string name="all_genres">Todos os estilos</string>
+    <string name="total_genre">%2$s: %1$s músicas · toque para copiar o número</string>
     <string name="total">%1$s músicas · toque para copiar o número</string>
     <plurals name="results">
         <item quantity="one">%1$s resultado</item>

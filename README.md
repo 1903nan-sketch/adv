@@ -7,6 +7,7 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
   <img src="docs/tela-inicial.png" width="240" alt="Tela inicial">
   <img src="docs/busca-cantor.png" width="240" alt="Busca por cantor">
   <img src="docs/busca-sem-acento.png" width="240" alt="Busca sem acento">
+  <img src="docs/estilo-romanticas.png" width="240" alt="Filtro por estilo">
   <img src="docs/modo-escuro.png" width="240" alt="Modo escuro">
 </p>
 
@@ -28,6 +29,10 @@ App Android para procurar músicas da **Lista Completa Internacional** (HD-OKÊ)
 - Pode misturar música e cantor: `hello adele`. Se o filtro **Música** ou **Cantor** não
   achar nada, o app procura nos dois sozinho e avisa.
 - Aceita pequenos erros de digitação: `bohemian rapsody`, `bom jovi`, `whitney huston`.
+- Filtre por **estilo musical** na segunda fileira de botões (role para o lado):
+  Pop, Rock, Românticas, R&B e Soul, Dance, Rap e Hip-Hop, Latinas, Country,
+  Jazz e Blues, Filmes e Musicais, Reggae, Italianas e Europeias, K-pop.
+  O estilo funciona junto com a busca (ex.: estilo Românticas + `love`).
 - Toque numa música para **copiar o número**.
 
 ## Atualizar a lista
@@ -39,6 +44,18 @@ Para gerar de novo a partir de um PDF novo:
 pdftotext -layout LISTA_COMPLETA_INTERNACIONAL.pdf lista.txt
 python3 tools/pdf_para_tsv.py lista.txt app/src/main/assets/musicas.tsv
 ./gradlew assembleRelease   # APK em app/build/outputs/apk/release/
+```
+
+### Estilos musicais
+
+O PDF não traz o estilo das músicas. Ele foi definido **por cantor** no arquivo
+`app/src/main/assets/estilos.txt` (uma linha por cantor: `Cantor | estilo,estilo`).
+Colaborações ("X ft. Y", "X & Y") usam o estilo do primeiro cantor. Estilos com menos
+de 5 músicas não aparecem como filtro. Depois de mudar a lista ou os estilos, confira se
+nenhum cantor ficou sem estilo:
+
+```bash
+python3 tools/conferir_estilos.py
 ```
 
 Observação: no PDF original a música **26818 (Celeste)** não tem título; no app ela

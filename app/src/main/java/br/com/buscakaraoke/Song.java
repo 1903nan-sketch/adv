@@ -26,8 +26,15 @@ final class Song {
     final String[] titleWords;
     final String[] artistWords;
     final String[] allWords;
+    /** Chaves de estilo (ex.: "pop", "rock"); pode ser vazio. */
+    final String[] genres;
 
     Song(String number, String artist, String title, String att) {
+        this(number, artist, title, att, NO_WORDS);
+    }
+
+    Song(String number, String artist, String title, String att, String[] genres) {
+        this.genres = genres;
         this.number = number;
         this.artist = artist;
         this.title = title;
@@ -75,6 +82,13 @@ final class Song {
             }
         }
         return out == null ? n : out.toString();
+    }
+
+    boolean hasGenre(String genre) {
+        for (String g : genres) {
+            if (g.equals(genre)) return true;
+        }
+        return false;
     }
 
     private static String[] words(String norm) {

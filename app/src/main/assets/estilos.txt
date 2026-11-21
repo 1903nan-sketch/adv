@@ -1,0 +1,1280 @@
+# Estilo musical de cada cantor (um ou mais, separados por vírgula).
+# Formato: Cantor | estilo,estilo
+# Colaborações ("X ft. Y", "X & Y", "X, Y") usam o estilo do primeiro cantor.
+# Maiúsculas, acentos, "The" e "&"/"and"/"e" não importam na comparação.
+# Estilos: pop rock romantica dance rap soul latina country reggae jazz europeia
+#          kpop filmes gospel sertanejo mpb
+10cc | rock
+10,000 Maniacs | rock
+24KGoldn | rap,pop
+3 Doors Down | rock
+30 Seconds To Mars | rock
+3OH!3 | pop,dance
+4 Non Blondes | rock
+5 Seconds of Summer | pop,rock
+50 Cent | rap
+6ix9ine | rap
+A Flock Of Seagulls | pop
+A Great Big World | pop
+A Perfect Circle | rock
+A Teens | pop
+Aaliyah | soul
+Aaron Neville | soul,romantica
+ABBA | pop
+ABC | pop
+AC/DC | rock
+Ace of Base | pop,dance
+Adam Lambert | pop
+Adele | pop,romantica
+Adrian Gurvitz | pop,romantica
+Aerosmith | rock
+AFI | rock
+Afrojack | dance
+A-ha | pop
+Air Supply | romantica
+Akon | soul,rap
+Al Green | soul
+Al Jarreau | jazz,soul
+Al Martino | jazz,romantica
+Al Stewart | rock
+Alan Jackson | country
+Alan Parsons Project | rock
+Alan Walker | dance
+Alanis Morissette | rock
+Alannah Myles | rock
+Albert Hammond | pop,romantica
+Alejandro Fernandez | latina,romantica
+Alejandro Sanz | latina,romantica
+Alessia Cara | pop
+Alesso | dance
+Alexandra Stan | dance
+Alice Cooper | rock
+Alice in Chains | rock
+Alicia Keys | soul
+Alien Ant Farm | rock
+All-4-One | soul,romantica
+Alphaville | pop
+Alter Bridge | rock
+Althea & Donna | reggae
+Ambrosia | romantica
+Amedeo Minghi | europeia,romantica
+America | rock
+Amii Stewart | dance
+Aminé | rap
+Amy Winehouse | soul,jazz
+Andrea Bocelli | europeia,romantica
+Andrea Boccelli | europeia,romantica
+Andy Gibb | pop
+Andy Grammer | pop
+Andy Williams | jazz,romantica
+Animals | rock
+Anita Baker | soul
+Anita Barker | soul
+Anita Ward | dance
+Anna Kendrick | filmes
+Anne Marie | pop
+Anne Murray | country,romantica
+Annie Lennox | pop
+Another Level | soul
+Anthony Gonzalez | filmes
+Anthrax | rock
+Anuel AA | latina
+Apache Indian | reggae
+Aqua | dance,pop
+Architect | dance
+Arctic Monkeys | rock
+Aretha Franklin | soul
+Ariana Grande | pop
+Arizona Zervas | rap
+AronChupa | dance
+Ashanti | soul
+Ashlee Simpson | pop
+Asia | rock
+Association | pop
+ATC | dance
+Athlete | rock
+Atlantic Starr | soul,romantica
+Audioslave | rock
+Aurora | pop
+Ava Max | pop
+Aventura | latina
+Avicii | dance
+Avril Lavigne | pop,rock
+AWOLNATION | rock
+B. B. King | jazz
+B.J. Thomas | pop
+B.o.B. | rap
+Backstreet Boys | pop
+Bad Bunny | latina
+Badfinger | rock
+Bad Finger | rock
+Baltimora | dance
+Bananarama | pop
+Bangles | pop,rock
+BangTan Boys (BTS) 방탄소년단 | kpop
+Baranaked Ladies | rock
+Barbra Streisand | pop,romantica
+Barry Manilow | pop,romantica
+Barry White | soul,romantica
+Basshunter | dance
+Bastille | pop
+Bay City Rollers | pop
+Beach Boys | rock
+Beastie Boys | rap
+Beatles | rock
+Beauty and the Beast | filmes
+Bebe Rexha | pop
+Beck | rock
+Becky G | latina,pop
+Bee Gees | pop,dance
+Belinda Carlisle | pop
+Bell Biv DeVoe | soul
+Ben E. King | soul
+Ben Harper | rock
+Benny Blanco | pop
+Berlin | pop,romantica
+Bertie Higgins | pop,romantica
+Bette Midler | pop,romantica
+Beyoncé | pop,soul
+Big & Rich | country
+Big Mountain | reggae
+Bill Haley & His Comets | rock
+Bill Medley | pop
+Bill Withers | soul
+Billie Eilish | pop
+Billie Myers | pop,rock
+Billy Idol | rock
+Billy Joe | pop,rock
+Billy Joel | pop,rock
+Billy Ocean | pop,soul
+Billy Paul | soul
+Billy Ray Cyrus | country
+Billy Squier | rock
+Billy Swan | country
+Bishop Briggs | pop
+Björk | pop
+Black | pop
+Black Eyed Peas | pop,rap
+Black Sabbath | rock
+BLACKPINK | kpop
+Blind Melon | rock
+Blink 182 | rock
+Blondie | rock,pop
+Blu Cantrell | soul
+Blue Oyster Cult | rock
+Blur | rock
+Bob Dylan | rock
+Bob Marley | reggae
+Bob Rivers | rock
+Bobby Caldwell | soul,romantica
+Bobby Helms | country
+Bobby Lewis | pop
+Bobby McFerrin | jazz
+Bobby Solo | europeia,romantica
+Bobby Womack | soul
+Bon Jovi | rock
+Boney M | dance
+Bonnie Tyler | rock
+Boston | rock
+boygenius | rock
+Boyz II Men | soul,romantica
+Brad Paisley | country
+Brandy | soul
+Bread | romantica
+Breakbot | dance
+Breaking Benjamin | rock
+Brian McFadden | pop
+Brian McKnight | soul,romantica
+Bring Me The Horizon | rock
+Britney Spears | pop
+Britt Nicole | gospel,pop
+Bronski Beat | dance
+Bruce Dickinson | rock
+Bruce Springsteen | rock
+Bruce Springsteeen | rock
+Bruno Mars | pop
+Bryan Adams | rock,romantica
+Bryan Ferry | pop
+BTS | kpop
+Buddy Holly | rock
+Bullet For My Valentine | rock
+Bush | rock
+Busta Rhymes | rap
+Cage The Elephant | rock
+Cake | rock
+Calum Scott | pop,romantica
+Calvin Harris | dance
+Cameo | soul
+Camila Cabello | pop
+Camp Rock | filmes
+Capital Cities | pop
+Captain and Tennille | pop
+Cardi B | rap
+Carl Carlton | soul
+Carl Douglas | dance
+Carlos Gardel | latina
+Carlos Vives | latina
+Carly Rae Jepsen | pop
+Carly Simon | pop
+Carole King | pop
+Carpenters | pop,romantica
+Carrie Underwood | country
+Cascada | dance
+Cat Stevens | rock
+Catfish & The Bottlemen | rock
+Ce Ce Peniston | dance
+Cecilia Krull | filmes
+Cee Lo Green | soul
+Celeste | soul
+Celine Dion | pop,romantica
+Century | pop,romantica
+Chad Kroeger | rock
+Chaka Khan | soul
+Champaign | soul,romantica
+Charlene | pop,romantica
+Charles & Eddie | soul
+Charli XCX | pop
+Charlie XCX | pop
+Charlie Daniels Band | country
+Charlie Puth | pop
+Charo | latina
+Cheap Trick | rock
+Cheat Codes | dance
+Cher | pop
+Cherish | soul
+Cheryl Lynn | dance
+Chet Faker | pop
+Chevelle | rock
+Chic | dance
+Chicago | rock,romantica
+Childish Gambino | rap,soul
+Chloe | soul
+Chloe x Halle | soul
+Chordettes | pop
+Chris Brown | soul
+Chris Colfer | filmes
+Chris De Burgh | pop,romantica
+Chris Deburgh | pop,romantica
+Chris Isaak | rock
+Chris Rea | rock
+Chris Stapleton | country
+Christian Nodal | latina
+Christie | pop
+Christina Aguilera | pop
+Christina Perri | pop,romantica
+Christmas | pop
+Christopher Cross | pop,romantica
+Chubby Checker | rock
+Chuck Berry | rock
+Chumbawamba | rock
+Ciara | soul
+Cigarettes After Sex | rock
+CKY | rock
+Clean Bandit | dance
+Cliff Richard | pop
+Cobra Starship | pop
+Cock Robin | pop
+Colbie Caillat | pop
+Cold | rock
+Coldplay | rock
+Cole Swindell | country
+Collin Raye | country
+Commodores | soul
+Conan Gray | pop
+Connie Francis | pop,romantica
+Coolio | rap
+Corey Hart | pop
+Corinne Bailey Rae | soul
+Corona | dance
+Counting Crows | rock
+Cover Girls | dance
+Crash Test Dummies | rock
+Creed | rock
+Creedence Clearwater Revival | rock
+Crossfade | rock
+Crowded House | rock
+Crystal Gayle | country
+Cuco Sanchez | latina
+Culture Club | pop
+Cutting Crew | pop
+Cyndi Lauper | pop
+Cynthia Rhodes | filmes
+Daddy Yankee | latina
+Daft Punk | dance
+Daisy Jones & The Six | rock,filmes
+Damian Marley | reggae
+Damien Rice | rock
+Dan + Shay | country
+Dan Fogelberg | romantica
+Daniel Caesar | soul
+Daniel Powter | pop
+Danzig | rock
+Dark New Day | rock
+Darren Criss | filmes
+Daryl Hall | pop
+Daughtry | rock
+Dave Maclean | romantica
+Dave Matthews Band | rock
+David Bowie | rock
+David Foster | pop,romantica
+David Gilmour | rock
+David Guetta | dance
+David Lee Roth | rock
+Dawn Penn | reggae
+Dead or Alive | dance
+Dean Martin | jazz
+Death Cab For Cutie | rock
+Debbie Boone | pop,romantica
+Debbie Gibson | pop
+Deee-Lite | dance
+Deep Blue Something | rock
+Deep Purple | rock
+Def Leppard | rock
+Deftones | rock
+Delta Goodrem | pop
+Demi Lovato | pop
+Demis Roussos | europeia,romantica
+Depeche Mode | pop
+Desireless | pop,europeia
+Desmond Dekker | reggae
+Des'ree | soul,pop
+Destiny's Child | soul
+Devo | rock
+Dexy's Midnight Runners | pop
+Diana Krall | jazz
+Diana Ross | soul
+Diane Guerrero, Stephanie Beatriz | filmes
+Dido | pop
+Dierks Bentley | country
+Dio | rock
+Dionne Warwick | soul,pop
+Dire Straits | rock
+Disclosure | dance
+Disturbed | rock
+Dj Khaled | rap
+DJ Snake | dance
+DNCE | pop
+Doja Cat | rap,pop
+Dolly Parton | country
+Don Johnson | pop
+Don McLean | rock
+Don Omar | latina
+Donna Summer | dance
+Doobie Brothers | rock
+Doris Day | jazz
+Double | pop,romantica
+Double You | dance
+Dove Cameron | pop
+Dr. Dre | rap
+Dr. Hook | pop,romantica
+Dr. Hook & The Medicine Show | pop,romantica
+Drake | rap
+Drifters | soul
+Drowning Pool | rock
+Dua Lipa | pop
+Duffy | pop
+Dulce Pontes | europeia
+Duran Duran | pop
+Dustin Lynch | country
+DVBBS | dance
+Eagle-Eye Cherry | rock
+Eagles | rock
+Earth, Wind & Fire | soul
+Echosmith | pop
+Ed Sheeran | pop
+Eddie Cochran | rock
+Eddy Grant | reggae,pop
+Edwyn Collins | rock
+Eiffel | dance
+Eighth Wonder | pop
+Electric Light Orchestra | rock
+Eliza Doolittle | pop
+Elle King | rock
+Ellie Goulding | pop
+Elton John | pop,rock
+Elvis Costello | rock
+Elvis Crespo | latina
+Elvis Presley | rock
+EMF | rock
+Emilia | latina
+Eminem | rap
+Emma Bunton | pop
+En Vogue | soul
+Encanto | filmes
+Engelbert Humperdinck | romantica
+Enrique Iglesias | latina,pop
+Erasure | pop
+Eric Burdon & The Animals | rock
+Eric Carmen | pop,romantica
+Eric Clapton | rock
+Eros Ramazzotti | europeia,romantica
+Estelle | soul
+Etta James | soul
+Europe | rock
+Eurythmics | pop
+Evanescence | rock
+Everly Brothers | rock
+Everything But The Girl | pop
+Extreme | rock
+Faith Hill | country
+Faith No More | rock
+Fall Out Boy | rock
+Fall Out Boys | rock
+Fantasia | soul
+Faouzia | pop
+Far East Movement | dance
+Fastball | rock
+Fat Joe | rap
+Fatboy Slim | dance
+Fergie | pop
+Fifth Harmony | pop
+FIFTY FIFTY | kpop
+Fine Young Cannibals | pop
+Fiona Apple | pop
+Five | pop
+Flamingos | soul,romantica
+Fleetwood Mac | rock
+FLO | soul
+Flo Rida | rap,dance
+Florence and The Machine | pop
+Florence and The Machine (Calvin Harris Remix) | pop,dance
+Florida Georgia Line | country
+Flying Machine | pop
+Foghat | rock
+Foo Fighters | rock
+Foreigner | rock
+Foster the People | pop
+Fountains of Wayne | rock
+Four Aces | pop
+Four Tops | soul
+Frank Ocean | soul
+Frank Sinatra | jazz
+Frankie Valli | pop
+Franz Ferdinand | rock
+Freddie Mercury | rock
+Frozen | filmes
+Fugees | rap
+Fun | pop
+Gabrielle Aplin | pop
+Galantis | dance
+Garbage | rock
+Gary Barlow | pop
+Gary Lewis & the Playboys | pop
+Gary Moore | rock
+Gary Wright | rock
+Gayle | pop
+Gazebo | dance
+G-Eazy | rap
+Gene Kelly | filmes
+Genesis | rock
+George Benson | jazz,soul
+George Ezra | pop
+George Harrison | rock
+George McRae | soul
+George Michael | pop
+George Thorogood | rock
+Geri Halliwell | pop
+Gerry Rafferty | rock
+Ghost | rock
+Gianluca Grignani | europeia
+Gigliola Cinquetti | europeia
+Gilbert O'Sullivan | pop,romantica
+Gino e Geno | sertanejo
+Gino Vanelli | pop
+Gipsy Kings | latina
+Giveon | soul
+Glass Animals | pop
+Glenn Frey | rock
+Glenn Medeiros | pop,romantica
+Gloria Estefan | latina,pop
+Gloria Gaynor | dance
+Gnarls Barkley | soul
+Godsmack | rock
+Goo Goo Dolls | rock
+Good Charlotte | rock
+Gorillaz | pop
+Gotye | pop
+Grand Funk Railroad | rock
+Green Day | rock
+Gregory Abbott | soul,romantica
+Grimes | pop
+Grover Washington Jr. | jazz,soul
+Grupo Frontera | latina
+Guess Who | rock
+Guns N' Roses | rock
+Gwen Stefani | pop
+Gwyneth Paltrow | pop
+Gym Class Heroes | pop
+Haddaway | dance
+Haim | pop
+Hairspray | filmes
+Halestorm | rock
+Halsey | pop
+Hank Wiliams | country
+Hank Williams Jr. | country
+Hannah Montana | filmes
+Hanson | pop
+Happening | pop
+Harry Belafonte | pop
+Harry Styles | pop
+Heart | rock
+Helen Reddy | pop
+High School Musical | filmes
+High School Musical 2 | filmes
+Hilary Duff | pop
+Hillary Duff | pop
+Hollies | rock
+Hoobastank | rock
+Hooverphonic | pop
+Hozier | rock
+Huey Lewis & The News | rock
+I Santo California | europeia,romantica
+Ice Nine Kills | rock
+Idina Menzel | filmes
+Iggy Azalea | rap
+Iggy Pop | rock
+Ill Niño | rock
+Imagination | dance
+Imagine Dragons | rock
+Incubus | rock
+Information Society | dance
+Inner Circle | reggae
+Into the Woods | filmes
+INXS | rock
+Irene Cara | pop,filmes
+Iron Maiden | rock
+Israel Kamakawiwo'ole | pop
+J Balvin | latina
+Ja Rule | rap
+Jack Harlow | rap
+Jack Johnson | pop
+Jackson 5 | soul
+Jackson's 5 | soul
+Jacob Banks | soul
+Jake Owen | country
+James Arthur | pop,romantica
+James Blunt | pop,romantica
+James Brown | soul
+James Ingram | soul,romantica
+James Morrison | pop
+James Taylor | pop
+Jamie Cullum | jazz
+Jamiroquai | soul
+Janet Jackson | pop
+Janis Joplin | rock
+Jason Aldean | country
+Jason Derulo | pop
+Jason Mraz | pop
+Jay Sean | pop
+Jeffrey Osborne | soul
+Jennifer Lopez | pop,latina
+Jennifer Paige | pop
+Jeremih | soul
+Jermaine Jackson | soul
+Jermaine Stewart | pop
+Jerry Lee Lewis | rock
+Jessica Darrow | filmes
+Jessica Simpson | pop
+Jessie J | pop
+Jet | rock
+Jim Diamond | pop,romantica
+Jim Reeves | country
+Jimi Hendrix | rock
+Jimmy Cliff | reggae
+Jimmy Eat World | rock
+Joan Jett & The Blackhearts | rock
+Joan Osborne | rock
+Joan Sebastián | latina
+Joe Cocker | rock
+Joe Esposito | pop
+Joe Jeffrey Group | soul
+Joe Jonas | pop
+Joe Nichols | country
+John Denver | country
+John Legend | soul,romantica
+John Lennon | rock
+John Mayer | pop
+John Newman | pop
+John Paul Young | pop
+John Travolta | filmes
+Johnny Alf | mpb
+Johnny Cash | country
+Johnny Hates Jazz | pop
+Johnny Horton | country
+Johnny Mathis | romantica
+Johnny Nash | reggae
+Johnny Rivers | rock
+Joji | pop
+Jojo | pop
+Jon Secada | latina,pop
+Jonas Blue | dance
+Jonas Brothers | pop
+Jonny Lang | rock
+Jordin Sparks | pop
+Jorja Smith | soul
+Josh Gracin | country
+Josh Turner | country
+Joshua Bassett | pop
+Joss Stone | soul
+Journey | rock
+Joy Division | rock
+JP Saxe | pop
+Juan Luis Guerra | latina
+Judas Priest | rock
+Judy Garland | filmes
+Juice WRLD | rap
+Julia Michaels | pop
+Julie and the Phantoms | filmes
+Julieta Venegas | latina
+Julio Iglesias | latina,romantica
+Jung Kook | kpop
+Junior Senior | pop
+Justin Bieber | pop
+Justin Timberlake | pop
+JVKE | pop
+K.D.Lang | pop
+Kaiser Chiefs | rock
+Kaleo | rock
+Kali Uchis | soul,latina
+Kansas | rock
+Kanye West | rap
+Karol G | latina
+Kate Bush | pop
+Kate Tunstall | pop
+Katrina & The Waves | pop
+Katy Perry | pop
+KC & The Sunshine Band | dance
+KC & Sunshine Band | dance
+Keane | rock
+Kehlani | soul
+Keith Urban | country
+Kelly Clarkson | pop
+Kendrick Lamar | rap
+Kenny Chesney | country
+Kenny G | jazz,romantica
+Kenny Loggins | rock
+Kenny Rogers | country,romantica
+Kesha | pop
+Khalid | soul
+Kid Cudi | rap
+Kiesza | dance
+Kim Carnes | pop
+Kings of Leon | rock
+Kiss | rock
+Klymaxx | soul,romantica
+Kool & The Gang | soul
+Korn | rock
+Kris Kristofferson | country
+Kygo | dance
+Kylie Minogue | pop,dance
+La La Land | filmes
+La Mosca Tsé-Tsé | latina
+La Oreja de Van Gogh | latina,pop
+Lacuna Coil | rock
+Lady Antebellum | country
+Lady Gaga | pop
+Lana Del Rey | pop
+Lara Fabian | romantica
+Laura Branigan | pop
+Laura Pausini | europeia,romantica
+Lauryn Hill | soul,rap
+Lauv | pop
+LeAnn Rimes | country
+Led Zeppelin | rock
+Led Zeppellin | rock
+Lena Horne | jazz
+Lenny Kravitz | rock
+Leo Sayer | pop
+Leona Lewis | pop,romantica
+Les Miserables | filmes
+Level 42 | pop
+Lewis Capaldi | pop,romantica
+Lianne La Havas | soul
+Lighthouse Family | pop
+Lil Nas X | rap
+Lil Suzy | dance
+Lil Wayne | rap
+Lily Allen | pop
+Limp Bizkit | rock
+Linda Ronstadt | rock
+Lindsay Lohan | pop
+Lindsey Buckingham | rock
+Linkin Park | rock
+Lionel Richie | romantica,soul
+Lipps Inc. | dance
+Little Big Town | country
+Little Mix | pop
+Little Richard | rock
+Little River Band | rock
+Little Texas | country
+Live | rock
+Living Colour | rock
+Living in A Box | pop
+Lizzo | pop
+Lmfao | dance
+Lobo | pop,romantica
+Lorde | pop
+Los Angeles Azules | latina
+Los Del Rio | latina
+Los Lobos | rock
+Los Lonely Boys | rock
+Lou Bega | dance
+Lou Rawls | soul
+Louis Armstrong | jazz
+Loverboy | rock
+Luciano Pavaroti | europeia
+Lucio Dalla | europeia
+Lucky Daye | soul
+Luigi Denza | europeia
+Luis Fonsi | latina
+Luis Miguel | latina,romantica
+Lukas Graham | pop
+Luke Bryan | country
+Lulu | pop
+Lunay | latina
+Luther Vandross | soul,romantica
+Lykke Li | pop
+Lynyrd Skynyrd | rock
+M.I.A. | rap
+Mac DeMarco | rock
+Macklemore | rap
+Macy Gray | soul
+Madonna | pop
+Magic! | pop
+Major Lazer | dance
+Malcolm Roberts | romantica
+Maluma | latina
+Mamas & The Papas | pop
+Maná | latina
+Maneskin | rock
+Manu Chao | latina
+Mariah Carey | pop,romantica
+Marie Osmond | country
+Marillion | rock
+Marilyn Manson | rock
+Marina & The Diamonds | pop
+Mark Ronson | pop
+Marky Mark & The Funky Bunch | rap
+Maroon 5 | pop
+Marshmello | dance
+Martha And Vandellas | soul
+Martin Solveig | dance
+Marvin Gaye | soul
+Matchbox Twenty | rock
+Matt Monro | romantica
+Matthew Fisher | romantica
+Matthew Wilder | pop
+Maurice Williams & The Zodiacs | soul
+MC Hammer | rap
+McFly | pop
+Meat Loaf | rock
+Megadeth | rock
+Megan Thee Stallion | rap
+Megan Thee Stalion | rap
+Meghan Trainor | pop
+Melanie C | pop
+Melanie Martinez | pop
+Men At Work | rock
+MercyMe | gospel
+Meredith Brooks | rock
+Metallica | rock
+MGMT | rock
+Michael Bolton | romantica
+Michael Bublé | jazz
+Michael Jackson | pop
+Michael Learns To Rock | romantica
+Michael McDonald | soul
+Michael Sembello | pop
+Mick Fleetwood | rock
+Mick Jagger | rock
+Miguel Aceves Mejía | latina
+Mika | pop
+Mike & The Mechanics | rock
+Mike Reno | rock
+Mike Will Made-It | rap
+Miley Cyrus | pop
+Milli Vanilli | pop
+Minnie Riperton | soul
+Miranda Lambert | country
+Missy Elliot | rap
+Missy Elliott | rap
+Mitch Miller | pop
+MKTO | pop
+Modern Talking | dance
+Mon Laferte | latina
+Monaco | rock
+Montell Jordan | soul
+Moody Blues | rock
+Morissey | rock
+Morrissey | rock
+Morris Albert | romantica
+Mötley Crüe | rock
+Motörhead | rock
+Mountain | rock
+Mr. Big | rock
+Mr. Mister | rock
+Mr. Probz | pop
+Mulan | filmes
+Mumford & Sons | rock
+Muse | rock
+My Chemical Romance | rock
+N Sync | pop
+Nancy Sinatra | pop
+Nat King Cole | jazz
+Natalia Lafourcade | latina
+Natalie Imbruglia | pop
+Natalie La Rose | pop
+Natalie Merchant | rock
+Naughty Boy | pop
+Nazareth | rock
+Neil Diamond | pop
+Neil Sedaka | pop
+Neil Young | rock
+Nelly | rap
+Nelly Furtado | pop
+New Kids On The Block | pop
+New Order | dance
+New Radicals | pop
+Ne-Yo | soul
+Nick Jonas | pop
+Nickelback | rock
+Nicki Minaj | rap
+Nicky Jam | latina
+Nico & Vinz | pop
+Nicolette Larson | pop
+Nightwish | rock
+Nikka Costa | pop,romantica
+Nirvana | rock
+No Doubt | rock
+Noah Cyrus | pop
+Noel | dance
+Norah Jones | jazz
+Normani | pop
+Now United | pop
+Oasis | rock
+Of Monsters & Men | rock
+Offspring | rock
+Oliver Tree | pop
+Olivia Newton-John | pop
+Olivia Newton John | pop
+Olivia Rodrigo | pop
+Olly Murs | pop
+OMC | pop
+Omi | pop
+One Direction | pop
+OneRepublic | pop
+One Republic | pop
+Otis Redding | soul
+O-Town | pop
+Ottawan | dance
+Outkast | rap
+Owl City | pop
+Ozzy Osbourne | rock
+P.O.D. | rock
+Paloma Faith | pop
+Panic! At The Disco | rock
+Pantera | rock
+Papa Roach | rock
+Paramore | rock
+Passenger | pop
+Pat Benatar | rock
+Pat Boone | pop,romantica
+Patrick Hernandez | dance
+Patrick Swayze | romantica
+Patti Page | pop
+Patti Smith | rock
+Paul Anka | pop,romantica
+Paul McCartney | rock
+Paul Young | pop
+Paula Abdul | pop
+Paula Cole | pop
+Paulina Rubio | latina
+Peabo Bryson | soul,romantica
+Peaches & Herb | soul
+Pearl Jam | rock
+Pedro Capó | latina
+Pedro Fernandez | latina
+Peggy Lee | jazz
+Peppino Di Capri | europeia
+Percy Sledge | soul,romantica
+Perry Como | jazz
+Pet Shop Boys | pop
+Peter Bjorn and John | rock
+Peter Cetera | romantica
+Peter Frampton | rock
+Peter Gabriel | rock
+Peter Tosh | reggae
+Peter, Paul and Mary | pop
+Ph.D. | pop
+Pharrell Williams | pop
+Phil Collins | pop
+Phil Vassar | country
+Philip Bailey | soul
+Pink | pop
+Pink Floyd | rock
+Pistol Annies | country
+Pitbull | dance,latina
+Pixies | rock
+Placebo | rock
+Plain White T's | rock
+Platters | soul,romantica
+Player | rock
+Pointer Sisters | soul
+Poison | rock
+Portishead | pop
+Portugal. The Man | rock
+Post Malone | pop
+Pretenders | rock
+Prince | pop
+Procol Harum | rock
+Psy | kpop
+PUBLIC | pop
+Puddle of Mudd | rock
+Pussycat | pop
+Pussycat Dolls | pop
+Queen | rock
+Queens of the Stone Age | rock
+Queensryche | rock
+Quiet Riot | rock
+R. Kelly | soul
+R.E.M. | rock
+Radiohead | rock
+Rage Against The Machine | rock
+Rag'n'Bone Man | pop
+Ram Jam Band | rock
+Ramones | rock
+Rascal Flatts | country
+RATT | rock
+Ray Charles | soul
+Ray Parker | soul
+Ray Price | country
+RBD | latina
+Reba McEntire | country
+Rebecca Ferguson | soul
+Red Hot Chili Peppers | rock
+Redbone | rock
+Renzo Arbore | europeia
+Revelation Theory | rock
+Rex Orange County | pop
+Ricardo Cocciante | europeia,romantica
+Richard Marx | romantica
+Rick Astley | pop
+Rick James | soul
+Ricky Martin | latina,pop
+Righteous Brothers | romantica
+Rihanna | pop
+Rina Sawayama | pop
+Rise Against | rock
+Rita Coolidge | pop,romantica
+Rita Ora | pop
+Rita Pavone | europeia
+Ritchie Valens | rock
+Rixton | pop
+Robbie Williams | pop
+Roberta Flack | soul,romantica
+Roberto Leal | europeia
+Robin Schulz | dance
+Robin Thicke | soul
+Robin Tickhe | soul
+Robyn | pop
+Rockwell | pop
+Rod Stewart | rock
+Rolling Stones | rock
+Ronan Keating | pop,romantica
+Rosa Linn | pop
+Rosalía | latina
+Rosé | kpop
+Roxette | pop,romantica
+Roy Orbison | rock
+Royal Blood | rock
+Royal Crown Revue | jazz
+RuPaul | dance
+Rush | rock
+Ruth B | pop
+Sabrina | dance
+Sabrina Carpenter | pop
+Sade | soul
+Sam Smith | pop
+Samantha Mumba | pop
+Samantha Sang | pop
+Sandra | dance
+Santa Esmeralda | dance
+Santana | rock
+SchoolBoy Q | rap
+Sara Bareilles | pop
+Savage Garden | pop,romantica
+Scorpions | rock
+Scott McKenzie | pop
+Seal | pop
+Sean Kingston | pop
+Sean Paul | reggae
+Searchers | rock
+Sebastian Ingrosso | dance
+Sebastián Yatra | latina
+Seether | rock
+Selena | latina
+Selena Gomez | pop
+Semisonic | rock
+September | dance
+Sex Pistols | rock
+Shaggy | reggae
+Shakira | latina,pop
+Shalamar | soul
+Shania Twain | country,pop
+Shawn Mendes | pop
+Shayne Ward | pop,romantica
+Sheena Easton | pop
+Sheldon Harnick and Jerry Bock | filmes
+Sheryl Crow | rock
+Shiny Toy Guns | rock
+Shocking Blue | rock
+Sia | pop
+Sigrid | pop
+Silentó | rap
+Silverchair | rock
+Simon & Garfunkel | rock
+Simple Minds | rock
+Simple Plan | rock
+Simply Red | pop
+Sinead O'Connor | pop
+Sir Mix A-Lot | rap
+Sister Sledge | dance
+Sixpence None The Richer | pop
+Skeeter Davis | country
+Skid Row | rock
+Skillet | rock,gospel
+Skrillex | dance
+Slayer | rock
+Slipknot | rock
+Smash Mouth | rock
+Smashing Pumpkins | rock
+Smokie | rock
+Snap! | dance
+Snoop Dogg | rap
+Snoop Dog | rap
+Snow Patrol | rock
+Soda Stereo | latina
+Soft Cell | pop
+Soul Asylum | rock
+Soulja Boy | rap
+Soulja Boy Tell' Em | rap
+Soundgarden | rock
+Spandau Ballet | pop
+Spice Girls | pop
+Spin Doctors | rock
+Staind | rock
+Starship | rock
+Static-X | rock
+Steely Dan | rock
+Stephanie Beatriz, Olga Merediz | filmes
+Stephen Bishop | pop,romantica
+Stephen Foster | country
+Steppenwolf | rock
+Stereophonics | rock
+Steve Miller Band | rock
+Stevie Nicks | rock
+Stevie Wonder | soul
+Sting | pop
+Stone Sour | rock
+Stone Temple Pilots | rock
+Styx | rock
+Sublime | rock
+Sugar Ray | rock
+Sum 41 | rock
+Summer Walker | soul
+Supergrass | rock
+Supertramp | rock
+Survivor | rock
+Susan Boyle | pop
+Suzanne Vega | pop
+Swedish House Mafia | dance
+Swing Out Sister | pop
+Sylvester | dance
+System of A Down | rock
+SZA | soul
+t.A.t.U | pop
+T.I. | rap
+Taio Cruz | pop
+Take That | pop
+Talking Heads | rock
+Tame Impala | rock
+Tammy Wynette | country
+Taylor Dayne | pop
+Taylor Swift | pop
+Tears For Fears | pop
+Technotronic | dance
+Temple of The Dog | rock
+Temptation | soul
+Temptations | soul
+Tenacious D | rock
+Thalía | latina
+The 1975 | pop
+The 5th Dimension | pop
+The Archies | pop
+The B-52's | rock
+The Breeders | rock
+The Buggles | pop
+The Calling | rock
+The Cardigans | pop
+The Cars | rock
+The Cascades | pop
+The Chainsmokers | dance
+The Chi-Lites | soul
+The Cinematic Orchestra | pop
+The Clash | rock
+The Communards | dance
+The Corrs | pop
+The Cranberries | rock
+The Crests | pop
+The Cure | rock
+The Darkness | rock
+The Doors | rock
+The Flys | rock
+The Fray | rock
+The Greatest Showman | filmes
+The Honeydrippers | rock
+The Housemartins | pop
+The Human League | pop
+The Impressions | soul
+The Jacksons | soul
+The Kid LAROI | pop
+The Killers | rock
+The Knack | rock
+The Korgis | pop
+The Libertines | rock
+The Light Reflections | romantica
+The Little Mermaid | filmes
+The Lumineers | rock
+The Manhattans | soul,romantica
+The Marmalade | pop
+The Marvelettes | soul
+The Muppets Show | filmes
+The Nixons | rock
+The Outfield | rock
+The Phantom of the Opera | filmes
+The Police | rock
+The Pretty Reckless | rock
+The Proclaimers | rock
+The Raconteurs | rock
+The Rasmus | rock
+The Rembrandts | rock
+The Ronettes | pop
+The Runaways | rock
+The Sandpipers | pop
+The Script | pop
+The Smiths | rock
+The Sound of Music | filmes
+The Strokes | rock
+The Thing Tings | pop
+The Trammps | dance
+The Turtles | rock
+The Vapors | rock
+The Verve | rock
+The Walflowers | rock
+The Wallflowers | rock
+The Walters | pop
+The Wanted | pop
+The Weeknd | pop
+The White Stripes | rock
+The Who | rock
+The Wonders | rock
+The XX | pop
+Thin Lizzy | rock
+Thirty Seconds To Mars | rock
+Three Days Grace | rock
+Thrice | rock
+tick, tick, BOOM | filmes
+Tiesto | dance
+Tim Moore | romantica
+Timbaland | rap
+Tina Charles | dance
+Tina Turner | rock
+Tinashe | soul
+TINI | latina
+Tiziano Ferro | europeia
+TLC | soul
+Toby Keith | country
+Tom Jones | pop
+Tom Misch | soul
+Tom Odell | pop
+Tom Petty | rock
+Tommy James | rock
+Tommy Tutone | rock
+Tones & I | pop
+Toni Braxton | soul,romantica
+Tony Bennett | jazz
+Tony Orlando And Dawn | pop
+Tool | rock
+Toploader | rock
+Tori Amos | pop
+Tori Kelly | pop
+Toto | rock
+Tove Lo | pop
+Toy Story | filmes
+Trace Adkins | country
+Tracy Chapman | pop
+Train | pop
+Trans X | dance
+Trapt | rock
+Travie McCoy | pop
+Travis | rock
+Travis Tritt | country
+Trevor Daniel | pop
+Trey Songz | soul
+Troye Sivan | pop
+Twenty One Pilots | rock
+Twice | kpop
+Twisted Sister | rock
+Tyler, The Creator | rap
+U.S.A. For Africa | pop
+U2 | rock
+UB40 | reggae
+Ugly Kid Joe | rock
+Uncle Kracker | pop
+Usher | soul
+Van Halen | rock
+Van Morrison | rock
+Vanessa Carlton | pop
+Vanessa Hudgens | pop
+Vanessa Williams | pop,romantica
+Vanilla Ice | rap
+Vedo | soul
+Velvet Revolver | rock
+Velvet Underground & Nico | rock
+Vengaboys | dance
+Village People | dance
+War | soul
+Weezer | rock
+Westlife | pop,romantica
+Wham! | pop
+Wheatus | rock
+Whigfield | dance
+Whitesnake | rock
+Whitney Houston | pop,romantica
+Wicked | filmes
+Wild Cherry | soul
+Will.I.Am | pop
+Willie Nelson | country
+Willow | pop
+Wilson Philips | pop
+Wilson Pickett | soul
+Winger | rock
+Wings | rock
+Wiz Khalifa | rap
+World Party | rock
+Wynonna | country
+Y2K | rap
+Yarbrough & Peoples | soul
+Yellowcard | rock
+Yes | rock
+Ylvis | pop
+Young Rascals | rock
+Young The Giant | rock
+Yves Le Rock | dance
+Yvonne Elliman | pop
+Zara Larsson | pop
+Zayn | pop
+Zaz | europeia
+Zedd | dance
+Ziggy Marley | reggae
+ZZ Top | rock

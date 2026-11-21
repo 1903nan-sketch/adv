@@ -70,7 +70,28 @@ final class SongSearch {
     }
 
     Result search(String rawQuery, Field field) {
+        return search(rawQuery, field, null);
+    }
+
+    /** Músicas de um estilo, na ordem da lista. */
+    int countGenre(String genre) {
+        int n = 0;
+        for (Song s : byArtist) {
+            if (s.hasGenre(genre)) n++;
+        }
+        return n;
+    }
+
+    /** @param genre chave do estilo ("rock"...) ou {@code null} para todos. */
+    Result search(String rawQuery, Field field, String genre) {
         List<Song> base = field == Field.TITLE ? byTitle : byArtist;
+        if (genre != null) {
+            List<Song> only = new ArrayList<>();
+            for (Song s : base) {
+                if (s.hasGenre(genre)) only.add(s);
+            }
+            base = only;
+        }
         String q = Song.normalize(rawQuery);
         if (q.isEmpty()) return new Result(Kind.LIST, base);
 

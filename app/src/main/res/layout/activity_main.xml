@@ -108,6 +108,24 @@
                 android:text="@string/mode_artist" />
         </RadioGroup>
 
+        <HorizontalScrollView
+            android:id="@+id/genre_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:scrollbars="none">
+
+            <RadioGroup
+                android:id="@+id/genres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
         <TextView
             android:id="@+id/count"
             android:layout_width="match_parent"

@@ -17,14 +17,17 @@ import java.util.List;
 public class SongSearchTest {
 
     private static SongSearch search;
+    private static List<Song> all;
 
     @BeforeClass
     public static void load() throws IOException {
+        Genres genres = Genres.load(Files.newInputStream(Paths.get("src/main/assets/estilos.txt")));
         List<Song> songs = new ArrayList<>();
         for (String line : Files.readAllLines(Paths.get("src/main/assets/musicas.tsv"), StandardCharsets.UTF_8)) {
             String[] f = line.split("\t", -1);
-            songs.add(new Song(f[0], f[1], f[2], f[3]));
+            songs.add(new Song(f[0], f[1], f[2], f[3], genres.forArtist(f[1])));
         }
+        all = songs;
         search = new SongSearch(songs);
     }
 
@@ -148,6 +151,62 @@ public class SongSearchTest {
         assertEquals("aeon", Song.normalize("Æon"));
         assertEquals("cancao do mar", Song.normalize("CANÇÃO DO MAR"));
         assertEquals("non ce", Song.normalize("NON C'È"));
+    }
+
+    @Test
+    public void todaMusicaTemEstilo() {
+        for (Song x : all) {
+            assertTrue("sem estilo: " + x.artist, x.genres.length > 0);
+            for (String g : x.genres) assertTrue("estilo desconhecido: " + g, Genres.LABELS.containsKey(g));
+        }
+    }
+
+    @Test
+    public void estiloDeColaboracaoVemDoPrimeiroCantor() {
+        assertGenre("Rihanna ft.Calvin Harris", "pop");
+        assertGenre("Alicia Keys, Beyoncé", "soul");
+        assertGenre("Beatles (The)", "rock");
+        assertGenre("The Beatles", "rock");
+        assertGenre("Guns 'N Roses", "rock");
+        assertGenre("KC and The Sunshine Band", "dance");
+        assertGenre("Simon and Garfunkel", "rock");
+        assertGenre("FIFTY FIFTY (피프티피프티)", "kpop");
+        assertGenre("High School Musical (Sharpay)", "filmes");
+        assertGenre("J Balvin & Pitbull ft. Camila Cabello", "latina");
+    }
+
+    private static void assertGenre(String artist, String genre) {
+        for (Song x : all) {
+            if (x.artist.equals(artist)) {
+                assertTrue(artist + " deveria ser " + genre, x.hasGenre(genre));
+                return;
+            }
+        }
+        throw new AssertionError("cantor não está na lista: " + artist);
+    }
+
+    @Test
+    public void filtroPorEstilo() {
+        List<Song> rock = find("", SongSearch.Field.ALL, "rock").songs;
+        assertTrue(rock.size() > 1000);
+        for (Song x : rock) assertTrue(x.artist, x.hasGenre("rock"));
+        boolean queen = false;
+        for (Song x : rock) queen |= x.artist.equals("Queen");
+        assertTrue(queen);
+
+        // Busca + estilo juntos.
+        SongSearch.Result r = find("love", SongSearch.Field.TITLE, "romantica");
+        assertTrue(r.songs.size() > 10);
+        for (Song x : r.songs) assertTrue(x.hasGenre("romantica") && x.normTitle.contains("love"));
+        // Adele não é rock: com o filtro Rock ela não aparece.
+        for (Song x : find("adele", SongSearch.Field.ARTIST, "rock").songs) {
+            assertTrue(x.artist, !x.artist.equals("Adele") && x.hasGenre("rock"));
+        }
+        assertEquals(17, find("adele", SongSearch.Field.ARTIST, "pop").songs.size());
+    }
+
+    private static SongSearch.Result find(String q, SongSearch.Field f, String genre) {
+        return search.search(q, f, genre);
     }
 
     @Test

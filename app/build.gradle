@@ -10,8 +10,8 @@ android {
         applicationId 'br.com.buscakaraoke'
         minSdk 21
         targetSdk 35
-        versionCode 3
-        versionName '1.2'
+        versionCode 4
+        versionName '1.3'
     }
 
     // Chave de assinatura simples (tipo "debug") guardada no repositório para que

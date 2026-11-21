@@ -20,6 +20,7 @@ import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +32,21 @@ import java.nio.charset.StandardCharsets;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class MainActivity extends Activity {
 
+    /** Estilos com menos músicas que isso não viram filtro. */
+    private static final int MIN_SONGS_PER_GENRE = 5;
+    private static final String STATE_GENRE = "genre";
+
     private final NumberFormat numberFormat = NumberFormat.getIntegerInstance(new Locale("pt", "BR"));
+    private final Map<Integer, String> genreByChipId = new HashMap<>();
+    /** Estilo escolhido, ou {@code null} para todos. */
+    private String genre;
 
     private SongSearch songSearch;
     private List<Song> shown = Collections.emptyList();
@@ -61,6 +71,7 @@ public class MainActivity extends Activity {
         RadioGroup modes = findViewById(R.id.modes);
 
         songSearch = new SongSearch(loadSongs());
+        buildGenreChips(savedInstanceState == null ? null : savedInstanceState.getString(STATE_GENRE));
         ((TextView) findViewById(R.id.subtitle))
                 .setText(getString(R.string.subtitle, numberFormat.format(songSearch.size())));
 
@@ -122,6 +133,48 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(STATE_GENRE, genre);
+    }
+
+    private void buildGenreChips(String selected) {
+        RadioGroup group = findViewById(R.id.genres);
+        int checked = addGenreChip(group, getString(R.string.all_genres), null);
+        for (Map.Entry<String, String> e : Genres.LABELS.entrySet()) {
+            if (songSearch.countGenre(e.getKey()) < MIN_SONGS_PER_GENRE) continue;
+            int id = addGenreChip(group, e.getValue(), e.getKey());
+            if (e.getKey().equals(selected)) checked = id;
+        }
+        group.check(checked);
+        genre = genreByChipId.get(checked);
+        group.setOnCheckedChangeListener((g, id) -> {
+            if (id == View.NO_ID) return;
+            genre = genreByChipId.get(id);
+            applyFilter();
+            list.setSelection(0);
+        });
+    }
+
+    private int addGenreChip(RadioGroup group, String label, String key) {
+        RadioButton chip = new RadioButton(this, null, 0, R.style.GenreChip);
+        int id = View.generateViewId();
+        chip.setId(id);
+        chip.setText(label);
+        chip.setSaveEnabled(false);
+        RadioGroup.LayoutParams lp = new RadioGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, dp(34));
+        lp.setMarginEnd(dp(8));
+        group.addView(chip, lp);
+        genreByChipId.put(id, key);
+        return id;
+    }
+
+    private int dp(int value) {
+        return Math.round(value * getResources().getDisplayMetrics().density);
+    }
+
+    @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         setField(((RadioGroup) findViewById(R.id.modes)).getCheckedRadioButtonId());
@@ -145,11 +198,12 @@ public class MainActivity extends Activity {
         List<Song> songs = new ArrayList<>();
         try (BufferedReader in = new BufferedReader(new InputStreamReader(
                 getAssets().open("musicas.tsv"), StandardCharsets.UTF_8))) {
+            Genres genres = Genres.load(getAssets().open("estilos.txt"));
             String line;
             while ((line = in.readLine()) != null) {
                 String[] f = line.split("\t", -1);
                 if (f.length < 4) continue;
-                songs.add(new Song(f[0], f[1], f[2], f[3]));
+                songs.add(new Song(f[0], f[1], f[2], f[3], genres.forArtist(f[1])));
             }
         } catch (IOException e) {
             throw new IllegalStateException("Não foi possível ler a lista de músicas", e);
@@ -158,12 +212,13 @@ public class MainActivity extends Activity {
     }
 
     private void applyFilter() {
-        SongSearch.Result r = songSearch.search(search.getText().toString(), field);
+        SongSearch.Result r = songSearch.search(search.getText().toString(), field, genre);
         shown = r.songs;
         int n = shown.size();
         String num = numberFormat.format(n);
         if (r.kind == SongSearch.Kind.LIST) {
-            count.setText(getString(R.string.total, num));
+            count.setText(genre == null ? getString(R.string.total, num)
+                    : getString(R.string.total_genre, num, Genres.LABELS.get(genre)));
         } else if (n == 0) {
             count.setText(R.string.no_results);
         } else if (r.kind == SongSearch.Kind.WIDENED) {
